@@ -5,6 +5,7 @@ section.root {
   --brand-color: #5E6C84;
   --dark-green-color: #5AAC44;
   --green-color: #61BD4F;
+  --shadow: rgb(0 0 0 / 10%) 0 0 10px;
 }
 
 input,
@@ -99,8 +100,15 @@ ul.bottomLink a:hover {
   background-color: var(--white-color);
   padding: 1rem 2rem;
   text-align: center;
+  box-shadow: var(--shadow);
 }
 
 .brandlabel {
   color: var(--brand-color);
+}
+
+.federated-login-btn {
+  background-color: var(--white-color);
+  color: var(--text-color);
+  font-weight: 700;
 }
