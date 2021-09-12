@@ -1,12 +1,40 @@
+section.root {
+  --link-color: #0052CC;
+  --text-color: #4d4d4d;
+  --white-color: #fff;
+  --brand-color: #5E6C84;
+}
+
 input,
 button {
   width: 100%;
 }
 
-.root {
-  --link-color: #0052CC;
-  --text-color: #4d4d4d;
-  --white-color: #000;
+ul.bottomLink {
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid;
+  border-color: #ccc;
+  margin-top: 35px;
+  padding-top: 20px;
+}
+
+ul.bottomLink li {
+  display: inline-block;
+  list-style: none;
+}
+
+ul.bottomLink li:not(:first-child)::before {
+  content: "\2022";
+  margin: 0 7px 0px 5px;
+}
+
+ul.bottomLink a {
+  text-decoration: none;
+}
+
+ul.bottomLink a:hover {
+  text-decoration: underline;
 }
 
 .logoHeader {
@@ -32,28 +60,5 @@ button {
 }
 
 .brandlabel {
-  color: #5E6C84;
-}
-
-ul.bottomLink {
-  font-size: 14px;
-  text-align: center;
-}
-
-ul.bottomLink li {
-  display: inline-block;
-  list-style: none;
-}
-
-ul.bottomLink li:not(:first-child)::before {
-  content: "\2022";
-  margin: 0 8px 0px 4px;
-}
-
-ul.bottomLink a {
-  text-decoration: none;
-}
-
-ul.bottomLink a:hover {
-  text-decoration: underline;
+  color: var(--brand-color);
 }
