@@ -3,7 +3,8 @@ section.root {
   --text-color: #4d4d4d;
   --white-color: #fff;
   --brand-color: #5E6C84;
-  --green-color: #5AAC44;
+  --dark-green-color: #5AAC44;
+  --green-color: #61BD4F;
 }
 
 input,
@@ -22,25 +23,32 @@ form > button {
 form > input {
   padding: 0.6rem 0.35rem;
   border: 2px solid;
-  border-color: #d4d4d4;
+  border-color: #DFE1E6;
   background-color: #F9FAFC;
+  transition: border-color 0.4s ease-in-out, backgroud-color 0.3s ease-in-out;
 }
 
 form > input:focus {
   outline: none;
   border: 2px solid;
   border-color: var(--blue-color);
+  background-color: var(--white-color);
 }
 
 form > button {
-  padding: 0.35rem;
+  padding: 0.4rem;
   text-align: center;
-  background-color: var(--green-color);
+  background-color: var(--dark-green-color);
   color: var(--white-color);
   border: none;
   font-size: 15px;
   font-weight: 500;
   border-radius: 4px;
+  transition: backgroud-color 0.3s ease-in-out;
+}
+
+form > button:hover {
+  background-color: var(--green-color);
 }
 
 ul.bottomLink {
