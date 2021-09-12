@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Login.module.css";
 
 function Login() {
   return (
@@ -7,7 +8,7 @@ function Login() {
         <header><h1>Trello</h1></header>
         <section>
           <article>
-            <h4>Log in to Trello</h4>
+            <h4 className={styles.redColor}>Log in to Trello</h4>
             <form>
                 <input type="email" name="email" placeholder="Enter email" required />
                 <input type="password" name="password" placeholder="Enter password" required />
