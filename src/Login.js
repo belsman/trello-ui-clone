@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./Login.module.css";
+import logo from './logo.svg';
 
 function Login() {
   return (
     <div>
       <section>
-        <header><h1>Trello</h1></header>
+        <header>
+          <img className={styles.loginLogo} src={logo} alt="Trello" />
+        </header>
         <section>
           <article>
             <h4 className={styles.redColor}>Log in to Trello</h4>
