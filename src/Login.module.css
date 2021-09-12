@@ -3,6 +3,12 @@ button {
   width: 100%;
 }
 
+.root {
+  --link-color: #0052CC;
+  --text-color: #4d4d4d;
+  --white-color: #000;
+}
+
 .logoHeader {
   text-align: center;
   padding: 1rem 0;
@@ -15,12 +21,12 @@ button {
 
 .mainContent {
   width: 30%;
-  border: 1px solid red;
   margin: auto;
+  color: var(--text-color);
 }
 
 .innerContent {
-  background-color: #fff;
+  background-color: var(--white-color);
   padding: 1rem 2rem;
   text-align: center;
 }
@@ -30,13 +36,13 @@ button {
 }
 
 ul.bottomLink {
-  list-style-type: none;
   font-size: 14px;
   text-align: center;
 }
 
 ul.bottomLink li {
   display: inline-block;
+  list-style: none;
 }
 
 ul.bottomLink li:not(:first-child)::before {
@@ -46,7 +52,6 @@ ul.bottomLink li:not(:first-child)::before {
 
 ul.bottomLink a {
   text-decoration: none;
-  color: #0052CC;
 }
 
 ul.bottomLink a:hover {
