@@ -1,5 +1,5 @@
 section.root {
-  --link-color: #0052CC;
+  --blue-color: #0052CC;
   --text-color: #4d4d4d;
   --white-color: #fff;
   --brand-color: #5E6C84;
@@ -21,6 +21,15 @@ form > button {
 
 form > input {
   padding: 0.6rem 0.35rem;
+  border: 2px solid;
+  border-color: #d4d4d4;
+  background-color: #F9FAFC;
+}
+
+form > input:focus {
+  outline: none;
+  border: 2px solid;
+  border-color: var(--blue-color);
 }
 
 form > button {
@@ -55,6 +64,7 @@ ul.bottomLink li:not(:first-child)::before {
 
 ul.bottomLink a {
   text-decoration: none;
+  color: var(--blue-color);
 }
 
 ul.bottomLink a:hover {
@@ -72,7 +82,7 @@ ul.bottomLink a:hover {
 }
 
 .mainContent {
-  width: 33%;
+  width: 31%;
   margin: auto;
   color: var(--text-color);
 }
