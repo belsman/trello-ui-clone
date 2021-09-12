@@ -1,8 +1,54 @@
-.redColor {
-  color: red;
+input,
+button {
+  width: 100%;
+}
+
+.logoHeader {
+  text-align: center;
+  padding: 1rem 0;
 }
 
 .loginLogo {
   width: 197px;
   height: 43px;
+}
+
+.mainContent {
+  width: 30%;
+  border: 1px solid red;
+  margin: auto;
+}
+
+.innerContent {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.brandlabel {
+  color: #5E6C84;
+}
+
+ul.bottomLink {
+  list-style-type: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+ul.bottomLink li {
+  display: inline-block;
+}
+
+ul.bottomLink li:not(:first-child)::before {
+  content: "\2022";
+  margin: 0 8px 0px 4px;
+}
+
+ul.bottomLink a {
+  text-decoration: none;
+  color: #0052CC;
+}
+
+ul.bottomLink a:hover {
+  text-decoration: underline;
 }

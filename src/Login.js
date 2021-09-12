@@ -6,12 +6,12 @@ function Login() {
   return (
     <div>
       <section>
-        <header>
+        <header className={styles.logoHeader}>
           <img className={styles.loginLogo} src={logo} alt="Trello" />
         </header>
-        <section>
-          <article>
-            <h4 className={styles.redColor}>Log in to Trello</h4>
+        <section class={styles.mainContent}>
+          <article class={styles.innerContent}>
+            <h1 className={styles.brandlabel}>Log in to Trello</h1>
             <form>
                 <input type="email" name="email" placeholder="Enter email" required />
                 <input type="password" name="password" placeholder="Enter password" required />
@@ -19,7 +19,7 @@ function Login() {
             </form>
             <p>OR</p>
             <button>Continue With Google</button>
-            <ul>
+            <ul className={styles.bottomLink}>
                 <li><a href="">Can't log in?</a></li>
                 <li><a href="">Sign up for an account</a></li>
             </ul>
