@@ -14,6 +14,9 @@ button {
 form > input,
 form > button {
   margin: 0.5rem 0;
+  border-radius: 4px;
+  font-size: 14px;
+  color: inherit;
 }
 
 form > input {
@@ -23,6 +26,12 @@ form > input {
 form > button {
   padding: 0.35rem;
   text-align: center;
+  background-color: var(--green-color);
+  color: var(--white-color);
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 4px;
 }
 
 ul.bottomLink {
@@ -63,7 +72,7 @@ ul.bottomLink a:hover {
 }
 
 .mainContent {
-  width: 30%;
+  width: 33%;
   margin: auto;
   color: var(--text-color);
 }
