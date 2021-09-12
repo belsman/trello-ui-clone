@@ -5,9 +5,10 @@ section.root {
   --brand-color: #5E6C84;
 }
 
-input,
-button {
+form > input,
+form > button {
   width: 100%;
+  margin: 0.5rem 0;
 }
 
 ul.bottomLink {

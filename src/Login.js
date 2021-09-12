@@ -17,7 +17,7 @@ function Login() {
               <button type="submit">Log in</button>
           </form>
           <p>OR</p>
-          <button>Continue With Google</button>
+          <button type="button">Continue With Google</button>
           <ul className={styles.bottomLink}>
               <li><a href="">Can't log in?</a></li>
               <li><a href="">Sign up for an account</a></li>
