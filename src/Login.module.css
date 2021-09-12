@@ -3,12 +3,26 @@ section.root {
   --text-color: #4d4d4d;
   --white-color: #fff;
   --brand-color: #5E6C84;
+  --green-color: #5AAC44;
+}
+
+input,
+button {
+  width: 100%;
 }
 
 form > input,
 form > button {
-  width: 100%;
   margin: 0.5rem 0;
+}
+
+form > input {
+  padding: 0.6rem 0.35rem;
+}
+
+form > button {
+  padding: 0.35rem;
+  text-align: center;
 }
 
 ul.bottomLink {
