@@ -1,0 +1,28 @@
+.federatedLoginBtn {
+  background-color: #fff;
+  box-shadow: rgba(0,0,0,0.2) 1px 1px 5px 0;
+  padding: 0.6rem;
+  margin-bottom: 0.75rem;
+  border: transparent;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.label {
+  display: inline-block;
+  font-weight: bold;
+  color: #505f79;
+  font-size: 14px;
+  padding: 3px;
+  vertical-align: middle;
+}
+
+.federatedLoginBtn:hover {
+  background-color: #F9FAFC;
+}

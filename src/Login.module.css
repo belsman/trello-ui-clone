@@ -13,6 +13,10 @@ button {
   width: 100%;
 }
 
+button {
+  border-color: transparent;
+}
+
 form > input,
 form > button {
   margin: 0.5rem 0;
@@ -41,7 +45,6 @@ form > button {
   text-align: center;
   background-color: var(--dark-green-color);
   color: var(--white-color);
-  border: none;
   font-size: 15px;
   font-weight: 500;
   border-radius: 4px;
@@ -105,10 +108,4 @@ ul.bottomLink a:hover {
 
 .brandlabel {
   color: var(--brand-color);
-}
-
-.federated-login-btn {
-  background-color: var(--white-color);
-  color: var(--text-color);
-  font-weight: 700;
 }

@@ -1,6 +1,8 @@
 import React from "react";
+import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
 import logo from './logo.svg';
+
 
 function Login() {
   return (
@@ -17,7 +19,12 @@ function Login() {
               <button type="submit">Log in</button>
           </form>
           <p>OR</p>
-          <button type="button">Continue With Google</button>
+          <FederatedLoginButton cssId={'google-auth'} >
+            Continue with Google
+          </FederatedLoginButton>
+          <FederatedLoginButton cssId={'slack-auth'} >
+            Continue with Slack
+          </FederatedLoginButton>
           <ul className={styles.bottomLink}>
               <li><a href="">Can't log in?</a></li>
               <li><a href="">Sign up for an account</a></li>
