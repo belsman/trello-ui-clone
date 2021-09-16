@@ -1,21 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from './Login.js';
 import Register from './Register';
-import BoardList from "./BoardList";
 
-import './App.css';
-
-function App() {
+function Routes() {
   return (
-    <BrowserRouter>
+    <>
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Register} />
-        <Route path="/" component={BoardList} />
       </Switch>
-    </BrowserRouter>
+    </>
   );
-}
+};
 
-export default App;
+export default Routes;

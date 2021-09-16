@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
 import logo from './logo.svg';
@@ -29,7 +30,7 @@ function Register() {
             Continue with Slack
           </FederatedLoginButton>
           <ul className={styles.bottomLink}>
-            <li><a href="">Already have an account? Log In</a></li>
+            <li><Link to="/login">Already have an account? Log In</Link></li>
           </ul>
         </article>
       </section>
