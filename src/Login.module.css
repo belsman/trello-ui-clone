@@ -5,6 +5,7 @@ section.root {
   --brand-color: #5E6C84;
   --dark-green-color: #5AAC44;
   --green-color: #61BD4F;
+  --disabled-btn-color: #E2E4E6;
   --shadow: rgb(0 0 0 / 10%) 0 0 10px;
 }
 
@@ -109,4 +110,11 @@ ul.bottomLink a:hover {
 
 .brandlabel {
   color: var(--brand-color);
+}
+
+
+.descriptors {
+  font-size: 12px;
+  color: var(--brand-color);
+  margin: 1rem 0;
 }
