@@ -1,11 +1,14 @@
 import React from "react";
+import BoardList from "./BoardList";
 import Header from "./Header";
 
 function Home() {
   return (
     <>
       <Header />
-      <h1>Welcome home</h1>
+      <div className="">
+        <BoardList />
+      </div>
     </>
   );
 }

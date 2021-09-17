@@ -1,0 +1,22 @@
+.root {
+  border: 1px solid blue;
+  width: 75%;
+  margin: 1rem auto;
+}
+
+.boardList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.boardItem {
+  border: 1px solid red;
+  width: 25%;
+  height: 80px;
+}
+
+.boardTile {
+  
+}
