@@ -10,10 +10,10 @@ function Header() {
   return (
     <nav className={styles.header}>
       <div className={styles.leftNav}>
-        <button className={styles.navbtn}>
+        <button className={`${styles.navbtn} ${styles.navIconBtn}`}>
             <FontAwesomeIcon icon={faHome} />
         </button>
-        <button className={styles.navbtn}>Boards</button>
+        <button className={styles.navbtn}><span className={styles.bolder}>Boards</span></button>
         <input className={styles.navFormControl} type="search" placeholder="Jump to..."/>
       </div>
 
@@ -23,10 +23,10 @@ function Header() {
 
       <div className={styles.rightNav}>
         <button className={styles.navbtn}>Create</button>
-        <button className={styles.navbtn}>
+        <button className={`${styles.navbtn} ${styles.navIconBtn}`}>
             <FontAwesomeIcon icon={faInfoCircle}  />
         </button>
-        <button className={styles.navbtn}>
+        <button className={`${styles.navbtn} ${styles.navIconBtn}`}>
           <FontAwesomeIcon icon={faBell} />
         </button>
         <div className={styles.headerAvatar}></div>
