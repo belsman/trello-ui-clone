@@ -33,20 +33,26 @@ button.navbtn:hover {
   display: flex;
 }
 
+/* === where the nav brand logo lives === */
 .middleNav {
   /* border: 1px solid red; */
+  background-image: url("header-logo-spirit.d947df93bc055849898e.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 80px;
+  height: 16px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }
 
-.brandLogo {
-  display: inline-block;
-  height: 30px;
-  border: 1px solid red;
+.middleNav:hover {
+  opacity: 0.8;
 }
 
 input.navFormControl {
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
-  /* border: 1px solid red; */
   border-radius: 4px;
   display: inline-block;
   width: 190px;
