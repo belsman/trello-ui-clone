@@ -29,7 +29,7 @@ function Login() {
             Continue with Slack
           </FederatedLoginButton>
           <ul className={styles.bottomLink}>
-              <li><a href="">Can't log in?</a></li>
+              <li><Link to="/">Can't log in?</Link></li>
               <li><Link to="/signup">Sign up for an account</Link></li>
           </ul>
         </article>

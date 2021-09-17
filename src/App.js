@@ -1,10 +1,11 @@
+import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import { Route, Switch } from 'react-router-dom';
 import Login from './Login.js';
 import Register from './Register';
-import BoardList from "./BoardList";
+import Home from "./Home";
 
-import './App.css';
+
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Register} />
-        <Route path="/" component={BoardList} />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );
