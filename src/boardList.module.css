@@ -1,5 +1,4 @@
 .root {
-  border: 1px solid blue;
   width: 75%;
   margin: 1rem auto;
 }
@@ -12,11 +11,28 @@
 }
 
 .boardItem {
-  border: 1px solid red;
   width: 25%;
   height: 80px;
+  cursor: pointer;
 }
 
 .boardTile {
-  
+  height: 100%;
+  border-radius: 3px;
+}
+
+#createBoard {
+  background-color: #091e420a;
+  /* background-color: #97a0af; */
+  transition: background-color 0.4s ease-in-out;
+  color: #172b4d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+#createBoard:hover {
+  background-color: #091e4214;
 }
