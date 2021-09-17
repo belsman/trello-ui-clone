@@ -31,7 +31,7 @@ form > input {
   border: 2px solid;
   border-color: #DFE1E6;
   background-color: #F9FAFC;
-  transition: border-color 0.4s ease-in-out, backgroud-color 0.3s ease-in-out;
+  transition: border-color 0.4s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 form > input:focus {
@@ -49,7 +49,7 @@ form > button {
   font-size: 15px;
   font-weight: 500;
   border-radius: 4px;
-  transition: backgroud-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 form > button:hover {

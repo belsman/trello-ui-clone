@@ -3,26 +3,41 @@ button {
   width: auto;
 }
 
+button.navbtn {
+  padding: 0.38rem;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button.navbtn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #026AA7;
-  border: 1px solid black;
+  padding: 4px;
   /* color: #172b4d; */
 }
 
 .leftNav {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   flex: 1;
 }
 
 .middleNav {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .rightNav {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   flex: 1;
   text-align: right;
 }
