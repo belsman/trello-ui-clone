@@ -1,0 +1,28 @@
+input[type=search],
+button {
+  width: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #026AA7;
+  border: 1px solid black;
+  /* color: #172b4d; */
+}
+
+.leftNav {
+  border: 1px solid blue;
+  flex: 1;
+}
+
+.middleNav {
+  border: 1px solid red;
+}
+
+.rightNav {
+  border: 1px solid yellow;
+  flex: 1;
+  text-align: right;
+}

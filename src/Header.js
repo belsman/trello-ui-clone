@@ -1,28 +1,27 @@
 import React from "react";
+import styles from './Header.module.css';
 
 function Header() {
   return (
-    <section className="">
-    <nav>
-      <div className="leftNav">
+    <nav className={styles.header}>
+      <div className={styles.leftNav}>
         <button className="navbtn">Home</button>
         <button className="navbtn">Boards</button>
-        <div><input type="search" placeholder="Jump to..."/></div>
+        <input type="search" placeholder="Jump to..."/>
       </div>
 
-      <div className="middleNav">
+      <div className={styles.middleNav}>
         <span>Trello</span>
       </div>
 
-      <div className="rightNav">
+      <div className={styles.rightNav}>
         <button className="navbtn">Create</button>
         <button className="navbtn">Info</button>
         <button className="navbtn">Bell</button>
         <button className="navbtn">Profile Link</button>
       </div>
     </nav>
-    </section>
-  )
+  );
 }
 
 export default Header;
