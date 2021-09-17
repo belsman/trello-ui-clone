@@ -29,7 +29,7 @@ function Header() {
         <button className={styles.navbtn}>
           <FontAwesomeIcon icon={faBell} />
         </button>
-        <button className={styles.navbtn}>Profile Link</button>
+        <div className={styles.headerAvatar}></div>
       </div>
     </nav>
   );

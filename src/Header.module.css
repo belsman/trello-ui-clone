@@ -44,6 +44,7 @@ button.navbtn:hover {
   height: 16px;
   opacity: 0.5;
   transition: opacity 0.2s ease;
+  cursor: pointer;
 }
 
 .middleNav:hover {
@@ -77,5 +78,15 @@ input.navFormControl:focus {
 .rightNav {
   /* border: 1px solid yellow; */
   flex: 1;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* === user avatar thumbnail === */
+.headerAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: green;
+  cursor: pointer;
 }
