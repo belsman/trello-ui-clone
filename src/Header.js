@@ -14,11 +14,11 @@ function Header() {
             <FontAwesomeIcon icon={faHome} />
         </button>
         <button className={styles.navbtn}>Boards</button>
-        <input type="search" placeholder="Jump to..."/>
+        <input className={styles.navFormControl} type="search" placeholder="Jump to..."/>
       </div>
 
       <div className={styles.middleNav}>
-        <span>Trello</span>
+        <span class={styles.brandLogo}></span>
       </div>
 
       <div className={styles.rightNav}>

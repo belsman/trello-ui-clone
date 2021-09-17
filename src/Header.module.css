@@ -4,7 +4,7 @@ button {
 }
 
 button.navbtn {
-  padding: 0.38rem;
+  /* padding: 0.38rem; */
   margin-right: 0.2rem;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.3);
@@ -12,6 +12,7 @@ button.navbtn {
   border-radius: 3px;
   font-size: 14px;
   transition: background-color 0.3s ease-in-out;
+  height: 32px;
 }
 
 button.navbtn:hover {
@@ -24,16 +25,47 @@ button.navbtn:hover {
   align-items: center;
   background-color: #026AA7;
   padding: 4px;
-  /* color: #172b4d; */
 }
 
 .leftNav {
   /* border: 1px solid blue; */
   flex: 1;
+  display: flex;
 }
 
 .middleNav {
   /* border: 1px solid red; */
+}
+
+.brandLogo {
+  display: inline-block;
+  height: 30px;
+  border: 1px solid red;
+}
+
+input.navFormControl {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* border: 1px solid red; */
+  border-radius: 4px;
+  display: inline-block;
+  width: 190px;
+  height: 32px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input.navFormControl:focus {
+  background-color: #fff;
+  color: #172b4d;
+  transition: width 0.4s ease-in-out;
+  outline: none;
+  width: 380px;
+}
+
+.navFormControl::placeholder {
+  color: #fff;
 }
 
 .rightNav {
