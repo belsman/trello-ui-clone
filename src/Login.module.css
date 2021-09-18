@@ -50,6 +50,7 @@ form > button {
   font-weight: 500;
   border-radius: 4px;
   transition: background-color 0.3s ease-in-out;
+  width: 100%;
 }
 
 form > button:hover {
