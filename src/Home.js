@@ -1,5 +1,6 @@
 import React from "react";
-import BoardList from "./BoardList";
+import BoardDetail from "./BoardDetail";
+// import BoardList from "./BoardList";
 import Header from "./Header";
 
 function Home() {
@@ -7,7 +8,7 @@ function Home() {
     <>
       <Header />
       <div className="">
-        <BoardList />
+        <BoardDetail />
       </div>
     </>
   );
