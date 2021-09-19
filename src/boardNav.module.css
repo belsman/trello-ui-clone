@@ -1,6 +1,7 @@
 nav.subNav {
   display: flex;
   justify-content: space-between;
+  padding: 0 0.5rem;
 }
 
 .firstNav {
@@ -28,7 +29,7 @@ nav.subNav {
   margin: 0.3rem 0.1rem;
   padding: 0.4rem 0.6rem;
   border-radius: 3px;
-  background-color: rgb(0, 121, 191, 0.6);
+  background-color: rgb(120, 194, 236, 0.5);
   color: #fff;
   font-size: 15px;
   cursor: pointer;
@@ -36,5 +37,5 @@ nav.subNav {
 }
 
 .clickableBtn:hover {
-  background-color: rgb(0, 121, 191, 0.5);;
+  background-color: rgb(120, 194, 236, 0.8);
 }
