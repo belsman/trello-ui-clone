@@ -1,0 +1,30 @@
+nav {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  /* height: 30px; */
+}
+
+.firstNav {
+  flex: 1;
+  display: flex;
+  border: 1px solid green;
+}
+
+.secondNav {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid blue;
+}
+
+.secondNavPart1,
+.secondNavPart2 {
+  display: flex;
+  border: 1px solid red;
+}
+
+.boardName {
+  display: inline-block;
+  margin: 0;
+}
