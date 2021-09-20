@@ -16,9 +16,11 @@ function BoardDetail() {
               <span className={styles.listHeaderMenu}>...</span>
             </header>
             <div className="cards"></div>
-            <footer className="list-footer">
-              <div className="add-card-action">
-                <button type="button">Add a card</button>
+            <footer className={styles.listFooter}>
+              <div className={styles.addCardAction}>
+                <button className={styles.composeTask} type="button">
+                  Add a card
+                </button>
               </div>
             </footer>
           </section>
