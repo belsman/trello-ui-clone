@@ -75,3 +75,34 @@ button.composeTask:hover {
   background-color: #091e4214;
   color: #172b4d;
 }
+
+
+/* === addCardFormContainer == */
+.addCardFormContainer {
+  /* border: 1px solid red; */
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.addCardFormContainer textarea {
+  width: 100%;
+  line-height: 20px;
+  padding: 0.5rem;
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  height: 60px;
+  font-size: 14px;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172b4d;
+}
+
+.addCardFormContainer textarea:focus {
+  border: none;
+  outline: none;
+  min-height: 54px;
+  max-height: 162px;
+}
