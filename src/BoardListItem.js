@@ -19,7 +19,10 @@ function BoardListItem() {
         <div className={styles.addCardFormActions}>
           <div className={styles.buttonsGroup}>
             <button className={styles.saveCard}>Add Card</button>
-            <button className={styles.cancelCard}></button>
+            <button
+             className={styles.cancelCard}
+             onClick={() => setShowAddCardForm(false)}
+            ></button>
           </div>
         </div>
       </div>

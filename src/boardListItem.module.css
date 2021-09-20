@@ -15,7 +15,6 @@ header.listHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 0.25rem 0; */
 }
   
 span.listHeaderMenu {
@@ -40,7 +39,7 @@ header.listHeader h4 {
 }
   
 .listFooter {
-  margin-top: 0.8rem;
+  margin-top: 0.4rem;
 }
   
 .addCardAction {
@@ -79,7 +78,6 @@ button.composeTask:hover {
 
 /* === addCardFormContainer == */
 .addCardFormContainer {
-  /* border: 1px solid red; */
   width: 100%;
   padding: 0.3rem;
 }
