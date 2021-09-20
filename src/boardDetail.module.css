@@ -15,16 +15,36 @@
 
 .list {
   width: 272px;
-  background-color: #fff;
+  background-color: #ebecf0;
   border-radius: 4px;
 }
 
 header.listHeader {
-  padding: 0.7rem 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem;
+  /* margin: 0.25rem 0; */
+}
+
+span.listHeaderMenu {
+  width: 27px;
+  height: 27px;
+  text-align: center;
+  border-radius: 3px;
+  color: #5e6c84;
+ /* border: 1px solid red; */
 }
 
 header.listHeader h4 {
   margin: 0;
+  margin-left: 0.3rem;
   font-size: 90%;
-  padding-left: 0.5rem;
+  /* border: 1px solid red; */
+  flex: 1;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.2rem;
+  border-radius: 2px;
 }

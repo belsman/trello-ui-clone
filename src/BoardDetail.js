@@ -13,6 +13,7 @@ function BoardDetail() {
           <section className={styles.list}>
             <header className={styles.listHeader}>
               <h4>To Do</h4>
+              <span className={styles.listHeaderMenu}>...</span>
             </header>
             <div className="cards"></div>
             <footer className="list-footer">
