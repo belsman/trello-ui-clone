@@ -106,3 +106,45 @@ button.composeTask:hover {
   min-height: 54px;
   max-height: 162px;
 }
+
+.addCardFormActions {
+  display: flex;
+  margin-top: 0.3rem;
+}
+
+.buttonsGroup {
+  display: flex;
+}
+
+.buttonsGroup > button {
+  cursor: pointer;
+}
+
+button.saveCard {
+  background-color: rgb(81, 158, 236);
+  color: #fff;
+  font-size: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button.saveCard:hover {
+  background-color: rgb(34, 137, 240);
+}
+
+button.cancelCard {
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+  color: #5e6c84;
+  transition: color 0.2s ease-in-out;
+}
+
+button.cancelCard::before {
+  content: "\2715";
+  font-size: 18px;
+}
+
+button.cancelCard:hover {
+  color: #172b4d;
+}

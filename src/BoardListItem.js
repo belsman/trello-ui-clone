@@ -16,10 +16,10 @@ function BoardListItem() {
     return (
       <div className={styles.addCardFormContainer}>
         <textarea placeholder="Enter a title for this card..."></textarea>
-        <div id="add-card-form-actions">
-          <div className="add-card-form-actions-button">
-            <button>Add Card</button>
-            <button>X</button>
+        <div className={styles.addCardFormActions}>
+          <div className={styles.buttonsGroup}>
+            <button className={styles.saveCard}>Add Card</button>
+            <button className={styles.cancelCard}></button>
           </div>
         </div>
       </div>
