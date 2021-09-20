@@ -2,6 +2,7 @@ import React from "react";
 import BoardNav from "./BoardNav";
 import styles from "./boardDetail.module.css";
 import Header from "./Header";
+import BoardListItem from "./BoardListItem";
 
 function BoardDetail() {
   return (
@@ -10,24 +11,9 @@ function BoardDetail() {
       <BoardNav />
       <main className={styles.board}>
         <div className={styles.boardLists}>
-          <section className={styles.list}>
-            <header className={styles.listHeader}>
-              <h4>To Do</h4>
-              <span className={styles.listHeaderMenu}>...</span>
-            </header>
-            <div className="cards"></div>
-            <footer className={styles.listFooter}>
-              <div className={styles.addCardAction}>
-                <button className={styles.composeTask} type="button">
-                  Add a card
-                </button>
-              </div>
-            </footer>
-          </section>
+          <BoardListItem />
         </div>
-        <div className="create-list">
-
-        </div>
+        <div className="create-list"></div>
       </main>
     </div>
   );
