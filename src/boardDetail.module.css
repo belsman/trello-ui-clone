@@ -2,3 +2,29 @@
   background-color: rgb(81, 158, 236);
   height: 100vh;
 }
+
+/* === board === */
+.board {
+  padding: 1rem 0.5rem 0;
+}
+
+/* ==== styles for list item === */
+.boardLists {
+  display: flex;
+}
+
+.list {
+  width: 272px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+header.listHeader {
+  padding: 0.7rem 0.4rem;
+}
+
+header.listHeader h4 {
+  margin: 0;
+  font-size: 90%;
+  padding-left: 0.5rem;
+}

@@ -8,10 +8,10 @@ function BoardDetail() {
     <div className={styles.rootDetail}>
       <Header />
       <BoardNav />
-      <main className="board">
-        <div className="board-lists">
-          <section className="list">
-            <header className="list-header">
+      <main className={styles.board}>
+        <div className={styles.boardLists}>
+          <section className={styles.list}>
+            <header className={styles.listHeader}>
               <h4>To Do</h4>
             </header>
             <div className="cards"></div>
