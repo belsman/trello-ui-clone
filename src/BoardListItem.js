@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import TextareaAutosize from 'react-textarea-autosize';
 
 import styles from "./boardListItem.module.css";
+import Card from "./Card";
 
 function BoardListItem() {
 
@@ -42,7 +43,9 @@ function BoardListItem() {
         <h4>To Do</h4>
         <span className={styles.listHeaderMenu}>...</span>
       </header>
-      <div className="cards"></div>
+      <div className="cards">
+        <Card />
+      </div>
       <footer className={styles.listFooter}>
         <div className={styles.addCardAction}>
           {showAddCardForm ? <AddCardForm /> : <ComposeCardButton />}
