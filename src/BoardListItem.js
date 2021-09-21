@@ -45,6 +45,7 @@ function BoardListItem() {
       </header>
       <div className="cards">
         <Card />
+        <Card />
       </div>
       <footer className={styles.listFooter}>
         <div className={styles.addCardAction}>

@@ -54,6 +54,7 @@ button.composeTask {
   font-size: 15px;
   background-color: inherit;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: pointer;
 }
   
 button.composeTask::before {
