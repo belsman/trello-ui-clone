@@ -1,0 +1,14 @@
+
+.card {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+h4.cardTitle {
+  border: 1px solid green;
+}
+
+button.editTitle {
+  border: 1px solid blue;
+}
