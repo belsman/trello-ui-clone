@@ -1,14 +1,25 @@
 
-.card {
-  border: 1px solid red;
+div.card {
+  /* border: 1px solid red; */
   display: flex;
+  background-color: #fff;
   justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.4rem;
+  margin: 0.3rem 0.1rem;
+  border-radius: 4px;
 }
 
-h4.cardTitle {
-  border: 1px solid green;
+span.cardTitle {
+  /* border: 1px solid green; */
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #172b4d;
+  word-wrap: break-word;
 }
 
 button.editTitle {
-  border: 1px solid blue;
+  font-size: 12px;
+  background-color: inherit;
 }
