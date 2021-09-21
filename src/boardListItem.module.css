@@ -22,14 +22,12 @@ span.listHeaderMenu {
   height: 27px;
   text-align: center;
   border-radius: 3px;
-  /* border: 1px solid red; */
 }
   
 header.listHeader h4 {
   margin: 0;
   margin-left: 0.3rem;
   font-size: 90%;
-  /* border: 1px solid red; */
   flex: 1;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
@@ -43,13 +41,11 @@ header.listHeader h4 {
 }
   
 .addCardAction {
-  /* border: 1px solid green; */
   display: flex;
   justify-content: space-between;
 }
   
 button.composeTask {
-  /* border: 1px solid red; */
   flex: 1;
   padding: 0.25rem 0.5rem;
   text-align: left;
@@ -96,11 +92,13 @@ button.composeTask:hover {
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   color: #172b4d;
+  border-bottom: 1px solid #a0a9b8;
 }
 
 .addCardFormContainer textarea:focus {
   border: none;
   outline: none;
+  border-bottom: 1px solid #a3acbb;
   min-height: 54px;
   max-height: 162px;
 }
@@ -134,7 +132,7 @@ button.saveCard:hover {
 button.cancelCard {
   padding: 0.3rem 0.5rem;
   border-radius: 3px;
-  color: #5e6c84;
+  color: #a0a9b8;
   transition: color 0.2s ease-in-out;
 }
 
