@@ -20,6 +20,15 @@ span.cardTitle {
 }
 
 button.editTitle {
+  display: none;
   font-size: 12px;
   background-color: inherit;
+  padding: 3px;
+  border-radius: 3px;
+  text-align: center;
+  transition: background-color 0.3rem ease;
+}
+
+button.editTitle:hover {
+  background-color: #ebecf0;
 }
