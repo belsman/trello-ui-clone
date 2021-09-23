@@ -21,13 +21,15 @@ function CardDetail()  {
             </textarea>
           </div>
         </div>
-        <ul className="immutableCardDetail">
+        <ul className={styles.immutableCardDetail}>
           <li>
-            <span className="icon">
-              <FontAwesomeIcon icon={faUser} />
-            </span>
-            <span>Creator: </span>
-            <span>belsman</span>
+            <div className={styles.immutableLabels}>
+              <span className={''}>
+                <FontAwesomeIcon icon={faUser} />
+              </span>
+              <span>{' '}Created by </span>
+            </div>
+            <span className={styles.immutableValue}>{'belsman'}</span>
           </li>
         </ul>
         <div>

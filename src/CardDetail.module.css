@@ -55,3 +55,17 @@ textarea.cardDetailTitleText:focus {
   align-items: center;
   color: #42526e;
 }
+
+ul.immutableCardDetail {
+  list-style-type: none;
+  color: #42526e;
+  font-size: 0.9rem;
+}
+
+ul.immutableCardDetail li {
+  display: flex;
+}
+
+span.immutableValue {
+  margin-left: 0.3rem;
+}
