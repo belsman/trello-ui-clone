@@ -1,6 +1,6 @@
-import { faChalkboard, faGripVertical, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChalkboard, faGripVertical, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./CardDetail.module.css";
 
@@ -8,12 +8,17 @@ function CardDetail()  {
   return (
     <article className={styles.cardDetail}>
       <main className={styles.cardDetailMain}>
-        <div>
-          <span className="icon">
+        <div className={styles.cardDetailTitle}>
+          <span className={styles.icon}>
               <FontAwesomeIcon icon={faChalkboard} />
           </span>
-          <div>
-            <textarea></textarea>
+          <div className={styles.cardDetailTextWrapper}>
+            <textarea
+              className={styles.cardDetailTitleText}
+              rows={1}
+              value={"This is my first card"}
+            >
+            </textarea>
           </div>
         </div>
         <ul className="immutableCardDetail">
