@@ -1,6 +1,7 @@
 import React from "react";
+import TextareaAutosize from 'react-textarea-autosize';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChalkboard, faGripVertical, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faAlignLeft, faChalkboard, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./CardDetail.module.css";
 
@@ -13,12 +14,7 @@ function CardDetail()  {
               <FontAwesomeIcon icon={faChalkboard} />
           </span>
           <div className={styles.cardDetailTextWrapper}>
-            <textarea
-              className={styles.cardDetailTitleText}
-              rows={1}
-              value={"This is my first card"}
-            >
-            </textarea>
+            <TextareaAutosize defaultValue={"This is my first board"} />
           </div>
         </div>
         <ul className={styles.immutableCardDetail}>
@@ -32,13 +28,13 @@ function CardDetail()  {
             <span className={styles.immutableValue}>{'belsman'}</span>
           </li>
         </ul>
-        <div>
-          <span className="icon">
-            <FontAwesomeIcon icon={faGripVertical} />
+        <div className={styles.desciptionWrapper}>
+          <span className={styles.icon}>
+            <FontAwesomeIcon icon={faAlignLeft} />
           </span>
-          <div>
+          <div className={styles.descriptionformContent}>
             <label>Description</label>
-            <textarea></textarea>
+            <TextareaAutosize />
           </div>
         </div>
       </main>
@@ -49,7 +45,7 @@ function CardDetail()  {
             <span className="actionIcon">
               <FontAwesomeIcon icon={faTrash} />
             </span>
-            <span className="actionLabel">Delete</span>
+            <span className={styles.actionLabel}>Delete</span>
           </li>
         </ul>
       </aside>

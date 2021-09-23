@@ -1,10 +1,24 @@
 .cardDetail {
-  /* border: 1px solid red; */
   background-color: #fff;
   display: flex;
   width: 60%;
   margin: 50px auto;
   padding: 10px 20px;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+}
+
+.cardDetail textarea {
+  width: 100%;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.cardDetail textarea:focus {
+  border-color: rgb(81, 158, 236);
+  border-radius: 4px;
 }
 
 .cardDetailMain {
@@ -12,46 +26,27 @@
   flex: 75%;
 }
 
-.cardDetailAction {
-  border: 1px solid blue;
-  flex: 25%;
-}
-
 .cardDetailTitle {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid red; */
 }
 
 .cardDetailTextWrapper {
   flex: 1;
   margin-left: 1rem;
-  font-size: 18px;
-  /* border: 1px solid black; */
 }
 
 textarea.cardDetailTitleText {
-  width: 100%;
-  display: block;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  border: 2px solid transparent;
-  outline: none;
   font-size: 1.4rem;
-  resize: none;
-  box-sizing: border-box;
   color: #172b4d;
-}
-
-textarea.cardDetailTitleText:focus {
-  border: 2px solid rgb(81, 158, 236);
-  border-radius: 4px;
+  height: 100%;
+  padding: 0;
 }
 
 .icon {
-  /* border: 1px solid green; */
   display: flex;
+  justify-content: center;
   align-items: center;
   color: #42526e;
 }
@@ -69,3 +64,66 @@ ul.immutableCardDetail li {
 span.immutableValue {
   margin-left: 0.3rem;
 }
+
+.desciptionWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.descriptionformContent {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.descriptionformContent label {
+  font-weight: bold;
+  color: #172b4d;
+}
+
+.descriptionformContent textarea {
+  margin-top: 1rem;
+}
+
+
+/* === aside section === */
+.cardDetailAction {
+  padding: 0 0.4rem;
+  flex: 25%;
+}
+
+.cardDetailAction h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.cardDetailAction ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.cardDetailAction span.actionLabel {
+  margin-left: 0.6rem;
+}
+
+.cardDetailAction li {
+  color: #42526e;
+  padding: 0.4rem;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardDetailAction li:hover {
+  background-color: #ebecf0;
+  color: #172b4d;
+}
+
+/* .cardDetailAction li:focus {
+  background-color: rgb(183, 235, 235);
+  
+} */
