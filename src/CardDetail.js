@@ -1,9 +1,11 @@
 import React from "react";
 
+import styles from "./CardDetail.module.css";
+
 function CardDetail()  {
   return (
-    <article>
-      <main className="cardDetailMain">
+    <article className={styles.cardDetail}>
+      <main className={styles.cardDetailMain}>
         <div>
           <span className="icon"></span>
           <div>
@@ -25,7 +27,7 @@ function CardDetail()  {
           </div>
         </div>
       </main>
-      <aside className="cardDetailAction">
+      <aside className={styles.cardDetailAction}>
         <h4>Action</h4>
         <ul>
           <li>

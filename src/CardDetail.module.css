@@ -1,0 +1,16 @@
+.cardDetail {
+  border: 1px solid red;
+  display: flex;
+  width: 60%;
+  margin: auto;
+}
+
+.cardDetailMain {
+  border: 1px solid black;
+  flex: 75%;
+}
+
+.cardDetailAction {
+  border: 1px solid blue;
+  flex: 25%;
+}
