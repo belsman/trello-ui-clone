@@ -1,5 +1,6 @@
 .cardDetail {
   border: 1px solid red;
+  background-color: #fff;
   display: flex;
   width: 60%;
   margin: auto;
