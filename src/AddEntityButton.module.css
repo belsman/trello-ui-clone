@@ -29,7 +29,7 @@ button.composeButton:hover {
 /* === addEntityFormContainer == */
 .addEntityFormContainer {
   width: 100%;
-  padding: 0.3rem;
+  padding: 0 0.3rem;
 }
   
 .addEntityFormContainer textarea {
@@ -48,7 +48,22 @@ button.composeButton:hover {
   color: #172b4d;
   border-bottom: 1px solid #a0a9b8;
 }
-  
+
+.addEntityFormContainer input {
+  width: 272px;
+  padding: 0.4rem 0.8rem;
+  color: #172b4d;
+  font-size: 14px;
+  outline: none;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 4px;
+}
+
+.addEntityFormContainer input:focus {
+  border: 2px solid dodgerblue;
+}
+
 .addEntityFormContainer textarea:focus {
   border: none;
   outline: none;
