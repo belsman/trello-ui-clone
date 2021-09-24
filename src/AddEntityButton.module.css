@@ -1,5 +1,5 @@
 button.composeButton {
-  width: 272px;
+  width: 100%;
   flex: 1;
   padding: 0.5rem 0.5rem;
   text-align: left;
@@ -50,7 +50,7 @@ button.composeButton:hover {
 }
 
 .addEntityFormContainer input {
-  width: 272px;
+  width: 100%;
   padding: 0.4rem 0.8rem;
   color: #172b4d;
   font-size: 14px;
@@ -112,4 +112,21 @@ button.cancelEntity::before {
   
 button.cancelEntity:hover {
   color: #172b4d;
+}
+
+/* == Custom style == */
+.addListForm {
+  background-color: #ebecf0;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.addListComposerBtn {
+  background-color: rgb(104, 166, 228) !important;
+  color: #fff !important;
+}
+
+.addListComposerBtn:hover {
+  background-color: dodgerblue !important;
+  /* background-color: yellow !important; */
 }

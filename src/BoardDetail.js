@@ -14,7 +14,7 @@ function BoardDetail() {
         <div className={styles.boardLists}>
           <BoardListItem />
         </div>
-        <div className="create-list">
+        <div className="create-list" className={styles.createBoard}>
           <AddListButton />
         </div>
       </main>

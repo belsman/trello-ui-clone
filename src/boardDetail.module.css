@@ -8,3 +8,8 @@
   padding: 0.5rem;
   display: flex;
 }
+
+.createBoard {
+  width: 272px;
+  align-self: flex-start;
+}
