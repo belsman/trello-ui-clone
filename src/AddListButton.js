@@ -5,13 +5,13 @@ function AddListButton() {
   const [ showAddListForm, setShowAddListForm ] = useState(false);
 
   const AddListForm = (
-    <div className={styles.addListFormContainer}>
+    <div className={styles.addEntityFormContainer}>
       <input type="text" name="listName" id="create-list" />
-      <div className={styles.addListFormActions}>
+      <div className={styles.addEntityFormActions}>
         <div className={styles.buttonsGroup}>
-          <button className={styles.saveCard}>Add list</button>
+          <button className={styles.saveEntity}>Add list</button>
           <button
-           className={styles.cancelCard}
+           className={styles.cancelEntity}
            onClick={() => setShowAddListForm(false)}
           ></button>
         </div>
@@ -24,7 +24,7 @@ function AddListButton() {
   }
 
   return (
-    <button className={''} type="button"
+    <button className={styles.composeButton} type="button"
       onClick={() => setShowAddListForm(true)}
     >
       Add a card

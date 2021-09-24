@@ -9,6 +9,7 @@
   border-radius: 4px;
   padding: 0.25rem;
   color: #5e6c84;
+  margin-right: 1rem;
 }
   
 header.listHeader {
@@ -43,105 +44,4 @@ header.listHeader h4 {
 .addCardAction {
   display: flex;
   justify-content: space-between;
-}
-  
-button.composeTask {
-  flex: 1;
-  padding: 0.25rem 0.5rem;
-  text-align: left;
-  border-radius: 3px;
-  color: inherit;
-  font-size: 15px;
-  background-color: inherit;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  cursor: pointer;
-}
-  
-button.composeTask::before {
-  content: "\002B";
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-}
-  
-button.composeTask:hover {
-  background-color: #091e4214;
-  color: #172b4d;
-}
-
-
-/* === addCardFormContainer == */
-.addCardFormContainer {
-  width: 100%;
-  padding: 0.3rem;
-}
-
-.addCardFormContainer textarea {
-  width: 100%;
-  line-height: 20px;
-  padding: 0.5rem;
-  resize: none;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  height: 60px;
-  font-size: 14px;
-  overflow-wrap: break-word;
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #172b4d;
-  border-bottom: 1px solid #a0a9b8;
-}
-
-.addCardFormContainer textarea:focus {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #a3acbb;
-  min-height: 54px;
-  max-height: 162px;
-}
-
-.addCardFormActions {
-  display: flex;
-  margin-top: 0.3rem;
-}
-
-.buttonsGroup {
-  display: flex;
-}
-
-.buttonsGroup > button {
-  cursor: pointer;
-}
-
-button.saveCard {
-  background-color: rgb(81, 158, 236);
-  color: #fff;
-  font-size: 500;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-button.saveCard:hover {
-  background-color: rgb(34, 137, 240);
-}
-
-button.cancelCard {
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
-  color: #a0a9b8;
-  transition: color 0.2s ease-in-out;
-}
-
-button.cancelCard::before {
-  content: "\2715";
-  font-size: 18px;
-}
-
-button.cancelCard:hover {
-  color: #172b4d;
 }
