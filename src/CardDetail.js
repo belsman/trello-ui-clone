@@ -14,7 +14,9 @@ function CardDetail()  {
               <FontAwesomeIcon icon={faChalkboard} />
           </span>
           <div className={styles.cardDetailTextWrapper}>
-            <TextareaAutosize defaultValue={"This is my first board"} />
+            {/* <TextareaAutosize
+              defaultValue={"This is my first board"}
+            /> */}
           </div>
         </div>
         <ul className={styles.immutableCardDetail}>
@@ -34,7 +36,11 @@ function CardDetail()  {
           </span>
           <div className={styles.descriptionformContent}>
             <label>Description</label>
-            <TextareaAutosize />
+            <TextareaAutosize
+              minRows={3}
+              maxRows={7}
+              placeholder={"Add a more detail description..."}
+            />
           </div>
         </div>
       </main>

@@ -2,28 +2,16 @@
   background-color: #fff;
   display: flex;
   width: 60%;
+  height: 400px;
   margin: 50px auto;
   padding: 10px 20px;
   box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
 }
 
-.cardDetail textarea {
-  width: 100%;
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  resize: none;
-  border: 2px solid transparent;
-  outline: none;
-}
-
-.cardDetail textarea:focus {
-  border-color: rgb(81, 158, 236);
-  border-radius: 4px;
-}
-
 .cardDetailMain {
   /* border: 1px solid black; */
   flex: 75%;
+  margin-right: 1rem;
 }
 
 .cardDetailTitle {
@@ -34,14 +22,6 @@
 .cardDetailTextWrapper {
   flex: 1;
   margin-left: 1rem;
-}
-
-textarea.cardDetailTitleText {
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: #172b4d;
-  height: 100%;
-  padding: 0;
 }
 
 .icon {
@@ -79,12 +59,28 @@ span.immutableValue {
 .descriptionformContent label {
   font-weight: bold;
   color: #172b4d;
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .descriptionformContent textarea {
-  margin-top: 1rem;
+  border: none;
+  width: 100%;
+  background-color: #e8e8e8;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  resize: none;
+  padding: 0.5rem;
 }
 
+.descriptionformContent textarea:focus {
+  min-height: 130px;
+  max-height: 200px;
+  background-color: #fff;
+  border: 2px solid dodgerblue;
+}
 
 /* === aside section === */
 .cardDetailAction {
@@ -113,7 +109,7 @@ span.immutableValue {
   color: #42526e;
   padding: 0.4rem;
   border-radius: 4px;
-  background-color: #f9f9f9;
+  background-color: #e8e8e8;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -122,8 +118,3 @@ span.immutableValue {
   background-color: #ebecf0;
   color: #172b4d;
 }
-
-/* .cardDetailAction li:focus {
-  background-color: rgb(183, 235, 235);
-  
-} */
