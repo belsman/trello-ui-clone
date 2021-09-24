@@ -3,6 +3,7 @@ import BoardNav from "./BoardNav";
 import styles from "./boardDetail.module.css";
 import Header from "./Header";
 import BoardListItem from "./BoardListItem";
+import AddListButton from "./AddListButton";
 
 function BoardDetail() {
   return (
@@ -13,7 +14,9 @@ function BoardDetail() {
         <div className={styles.boardLists}>
           <BoardListItem />
         </div>
-        <div className="create-list"></div>
+        <div className="create-list">
+          <AddListButton />
+        </div>
       </main>
     </div>
   );
