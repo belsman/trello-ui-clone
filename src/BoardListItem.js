@@ -1,42 +1,10 @@
 import React, { useState } from "react";
-
-import TextareaAutosize from 'react-textarea-autosize';
-
-import styles from "./boardListItem.module.css";
 import Card from "./Card";
+import AddCardButton from "./AddCardButton";
+import styles from "./boardListItem.module.css";
+
 
 function BoardListItem() {
-
-  const [ showAddCardForm, setShowAddCardForm ] = useState(false);
-
-  const ComposeCardButton = () => (
-    <button className={styles.composeTask} type="button"
-     onClick={() => setShowAddCardForm(true)}>
-      Add a card
-    </button>
-  );
-
-  const AddCardForm = () => {
-    return (
-      <div className={styles.addCardFormContainer}>
-        <TextareaAutosize 
-          placeholder="Enter a title for this card..."
-          minRows={3}
-          maxRows={7}
-        />
-        <div className={styles.addCardFormActions}>
-          <div className={styles.buttonsGroup}>
-            <button className={styles.saveCard}>Add Card</button>
-            <button
-             className={styles.cancelCard}
-             onClick={() => setShowAddCardForm(false)}
-            ></button>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <section className={styles.list}>
       <header className={styles.listHeader}>
@@ -49,7 +17,7 @@ function BoardListItem() {
       </div>
       <footer className={styles.listFooter}>
         <div className={styles.addCardAction}>
-          {showAddCardForm ? <AddCardForm /> : <ComposeCardButton />}
+          <AddCardButton />
         </div>
       </footer>
     </section>

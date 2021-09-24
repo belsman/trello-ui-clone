@@ -40,8 +40,3 @@ header.listHeader h4 {
 .listFooter {
   margin-top: 0.4rem;
 }
-  
-.addCardAction {
-  display: flex;
-  justify-content: space-between;
-}
