@@ -8,6 +8,23 @@
   box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
 }
 
+.cardDetail textarea {
+  width: 100%;
+  border-color: transparent;
+  border-width: 2px;
+  outline: none;
+  border-radius: 5px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172b4d;
+  transition: all 0.2s ease-in-out;
+}
+
+.cardDetail textarea:focus {
+  background-color: #fff;
+  border: 2px solid dodgerblue;
+}
+
 .cardDetailMain {
   /* border: 1px solid black; */
   flex: 75%;
@@ -22,6 +39,12 @@
 .cardDetailTextWrapper {
   flex: 1;
   margin-left: 1rem;
+}
+
+.cardDetailTextWrapper textarea {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.4rem;
 }
 
 .icon {
@@ -65,21 +88,15 @@ span.immutableValue {
 }
 
 .descriptionformContent textarea {
-  border: none;
-  width: 100%;
   background-color: #e8e8e8;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  resize: none;
   padding: 0.5rem;
 }
 
 .descriptionformContent textarea:focus {
   min-height: 130px;
   max-height: 200px;
-  background-color: #fff;
-  border: 2px solid dodgerblue;
+  /* background-color: #fff;
+  border: 2px solid dodgerblue; */
 }
 
 /* === aside section === */
