@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BoardNav from "./BoardNav";
 import styles from "./boardDetail.module.css";
 import Header from "./Header";

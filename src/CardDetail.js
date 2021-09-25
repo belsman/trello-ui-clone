@@ -5,7 +5,7 @@ import { faAlignLeft, faChalkboard, faTrash, faUser } from "@fortawesome/free-so
 
 import styles from "./CardDetail.module.css";
 
-function CardDetail()  {
+function CardDetail({ closeFn })  {
   return (
     <article className={styles.cardDetail}>
       <main className={styles.cardDetailMain}>
@@ -47,7 +47,10 @@ function CardDetail()  {
         </div>
       </main>
       <aside className={styles.cardDetailAction}>
-        <h4>Action</h4>
+        <div style={{ display: 'flex', justifyContent: 'space-between'}}>
+          <h4>Action</h4>
+          <button onClick={closeFn} type="button">X</button>
+        </div>
         <ul>
           <li>
             <span className="actionIcon">
