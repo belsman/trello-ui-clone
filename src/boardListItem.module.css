@@ -10,6 +10,7 @@
   padding: 0.25rem;
   color: #5e6c84;
   margin-right: 0.7rem;
+  align-self: flex-start;
 }
   
 header.listHeader {
