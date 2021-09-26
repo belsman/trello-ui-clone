@@ -5,7 +5,10 @@ import { faAlignLeft, faChalkboard, faTrash, faUser } from "@fortawesome/free-so
 
 import styles from "./CardDetail.module.css";
 
-function CardDetail({ closeFn })  {
+function CardDetail({ card, closeFn }) {
+
+  const { title, description, creator } = card;
+
   return (
     <article className={styles.cardDetail}>
       <main className={styles.cardDetailMain}>
@@ -15,7 +18,7 @@ function CardDetail({ closeFn })  {
           </span>
           <div className={styles.cardDetailTextWrapper}>
             <TextareaAutosize
-              defaultValue={"This is my first board"}
+              defaultValue={title}
               minRows={1}
               maxRows={3}
             />
@@ -29,7 +32,7 @@ function CardDetail({ closeFn })  {
               </span>
               <span>{' '}Created by </span>
             </div>
-            <span className={styles.immutableValue}>{'belsman'}</span>
+            <span className={styles.immutableValue}>{creator}</span>
           </li>
         </ul>
         <div className={styles.desciptionWrapper}>
@@ -41,6 +44,7 @@ function CardDetail({ closeFn })  {
             <TextareaAutosize
               minRows={3}
               maxRows={7}
+              defaultValue={description}
               placeholder={"Add a more detail description..."}
             />
           </div>

@@ -8,7 +8,8 @@ import CardDetail from "./CardDetail";
 
 Modal.setAppElement('#root');
 
-function Card() {
+function Card({ card }) {
+  const { title } = card;
   const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
   const customStyles = {
@@ -34,7 +35,7 @@ function Card() {
         className={styles.card}
         onClick={() => setModalIsOpen(true)}
       >
-        <span className={styles.cardTitle}>This is my first card.</span>
+        <span className={styles.cardTitle}>{title}</span>
         <button type="button" className={styles.editTitle}>
           <FontAwesomeIcon icon={faPencilAlt} />
         </button>
@@ -45,7 +46,7 @@ function Card() {
         onRequestClose={() => setModalIsOpen(false)}
         shouldCloseOnOverlayClick={true}
       >
-        <CardDetail closeFn={() => setModalIsOpen(false)} />
+        <CardDetail card={card} closeFn={() => setModalIsOpen(false)} />
       </Modal>
     </>
   )
