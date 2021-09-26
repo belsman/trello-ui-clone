@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { selectAllBoard } from "./boardsSlice";
-import styles from "./boardList.module.css";
+import styles from "./BoardList.module.css";
 import { useHistory } from "react-router-dom";
 
 function BoardList() {
