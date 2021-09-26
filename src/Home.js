@@ -1,6 +1,6 @@
 import React from "react";
-import BoardDetail from "./BoardDetail";
-import BoardList from "./BoardList";
+// import BoardDetail from "./BoardDetail";
+import BoardList from "./features/boards/BoardList";
 import Header from "./Header";
 
 function Home() {

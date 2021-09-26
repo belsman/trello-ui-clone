@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import axios from "axios";
+import dummy from "./dummy";
 
 const initialState = {
-  data: [],
+  data: dummy,
   status: 'idle',
   error: null
 };
@@ -49,7 +50,7 @@ const boardsSlice = createSlice({
 
 export default boardsSlice.reducer;
 
-// export const selectAllPost = state => state.posts.posts;
+export const selectAllBoard = state => state.boards.data;
 
 // export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId);
     
