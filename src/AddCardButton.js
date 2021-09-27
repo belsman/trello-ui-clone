@@ -14,7 +14,7 @@ function AddCardButton({ onClick }) {
     >
       Add a card
     </button>
-  )
+  );
 }
 
 export default AddCardButton;

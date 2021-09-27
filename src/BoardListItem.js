@@ -8,7 +8,8 @@ import CardComposer from "./CardComposer";
 function BoardListItem({ list, selectedCardComposerId, setSelectedCardComposerId }) {
   const { name, cards, id: listId } = list;
 
-  const renderedCards = cards.map(card => <Card card={card} />);
+  const renderedCards = cards.map(card => 
+    <Card card={card} setSelectedCardComposerId={setSelectedCardComposerId} />);
 
   return (
     <section className={styles.list}>

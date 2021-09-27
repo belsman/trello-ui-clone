@@ -8,7 +8,7 @@ import CardDetail from "./CardDetail";
 
 Modal.setAppElement('#root');
 
-function Card({ card }) {
+function Card({ card, setSelectedCardComposerId }) {
   const { title } = card;
   const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
@@ -29,11 +29,17 @@ function Card({ card }) {
     },
   };
 
+  const cardExceptOnClickListener = e => {
+    e.stopPropagation();
+    setModalIsOpen(true);
+    setSelectedCardComposerId('');
+  };
+
   return (
     <>
       <div
         className={styles.card}
-        onClick={() => setModalIsOpen(true)}
+        onClick={cardExceptOnClickListener}
       >
         <span className={styles.cardTitle}>{title}</span>
         <button type="button" className={styles.editTitle}>
@@ -46,7 +52,12 @@ function Card({ card }) {
         onRequestClose={() => setModalIsOpen(false)}
         shouldCloseOnOverlayClick={true}
       >
-        <CardDetail card={card} closeFn={() => setModalIsOpen(false)} />
+        <CardDetail
+          card={card}
+          closeFn={(e) => {
+            e.stopPropagation();
+            setModalIsOpen(false);
+          }} />
       </Modal>
     </>
   )
