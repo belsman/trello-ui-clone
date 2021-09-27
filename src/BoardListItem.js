@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Card from "./Card";
 import AddCardButton from "./AddCardButton";
 import styles from "./boardListItem.module.css";
-// import CardComposer from "./CardComposer";
+import CardComposer from "./CardComposer";
 
 
-function BoardListItem({ list }) {
-  const { name, cards } = list;
+function BoardListItem({ list, selectedCardComposerId, setSelectedCardComposerId }) {
+  const { name, cards, id: listId } = list;
 
   const renderedCards = cards.map(card => <Card card={card} />);
 
@@ -21,8 +21,10 @@ function BoardListItem({ list }) {
       </div>
       <footer className={styles.listFooter}>
         <div className={styles.addCardAction}>
-          <AddCardButton />
-          {/* {<CardComposer />} */}
+          { (selectedCardComposerId === listId) ?
+            <CardComposer onCancel={() => setSelectedCardComposerId('')} /> :
+            <AddCardButton onClick={() => setSelectedCardComposerId(listId)} />
+          }
         </div>
       </footer>
     </section>

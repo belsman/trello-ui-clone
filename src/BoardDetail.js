@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import BoardNav from "./BoardNav";
 import styles from "./boardDetail.module.css";
@@ -11,6 +11,12 @@ function BoardDetail({ match }) {
   const { boardId } = match.params;
 
   const [ showAddListComposer, setShowAddListComposer ] = useState(false);
+  const [ selectedCardComposerId, setSelectedCardComposerId ] = useState('');
+
+  const handleOuterClick = () => {
+    showAddListComposer && setShowAddListComposer(false);
+    selectedCardComposerId && setSelectedCardComposerId('');
+  }
 
   const board = useSelector(state => state.boards.data
     .find(board => board.id === Number(boardId)));
@@ -22,19 +28,19 @@ function BoardDetail({ match }) {
       </section>
     );
   }
-  // TODO: GET THE MATCHING ID
-  // USE THE ID TO GET THE BOARD FROM THE STORE BOARDLIST
-    // Ideally, we should requests from server
-    // and only use the list when there is a network connection error!
-  // IF !NO BOARD; THEN YOU WILL HAVE TO SHOW NO BOARD FOUND
 
   const lists = board.lists;
   const renderedLists = lists.map(
-    list => <BoardListItem key={list.id} list={list} />
+    list => <BoardListItem
+      key={list.id}
+      list={list}
+      selectedCardComposerId={selectedCardComposerId}
+      setSelectedCardComposerId={setSelectedCardComposerId}
+    />
   );
 
   return (
-    <div className={styles.rootDetail}>
+    <div className={styles.rootDetail} onClick={handleOuterClick}>
       <Header />
       <BoardNav />
       <main className={styles.board}>
@@ -44,7 +50,8 @@ function BoardDetail({ match }) {
         <div className={styles.createBoard}>
           { 
             showAddListComposer ? 
-            <ListComposer onClose={() => setShowAddListComposer(false)} /> :
+            <ListComposer onCancel={() => setShowAddListComposer(false)} />
+            :
             <AddListButton onClick={() => setShowAddListComposer(true)} />
           }
         </div>
