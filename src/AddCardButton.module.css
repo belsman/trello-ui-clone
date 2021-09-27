@@ -1,0 +1,28 @@
+button.composeButton {
+  width: 100%;
+  flex: 1;
+  padding: 0.2rem 0.4rem;
+  text-align: left;
+  border-radius: 3px;
+  color: inherit;
+  font-size: 15px;
+  background-color: inherit;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button.composeButton::before {
+  content: "\002B";
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+button.composeButton:hover {
+  background-color: #ccc;
+  color: #172b4d;
+}
+  

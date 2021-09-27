@@ -1,0 +1,26 @@
+button.addListComposerBtn {
+  background-color: rgb(104, 166, 228);
+  color: #fff;
+  width: 100%;
+  flex: 1;
+  padding: 0.5rem 0.4rem;
+  text-align: left;
+  border-radius: 3px;
+  font-size: 15px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button.addListComposerBtn::before {
+  content: "\002B";
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+  
+button.addListComposerBtn:hover {
+  background-color: dodgerblue;
+}
