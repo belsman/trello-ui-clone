@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import AddCardButton from "./AddCardButton";
 import styles from "./boardListItem.module.css";
+// import CardComposer from "./CardComposer";
 
 
 function BoardListItem({ list }) {
@@ -21,6 +22,7 @@ function BoardListItem({ list }) {
       <footer className={styles.listFooter}>
         <div className={styles.addCardAction}>
           <AddCardButton />
+          {/* {<CardComposer />} */}
         </div>
       </footer>
     </section>

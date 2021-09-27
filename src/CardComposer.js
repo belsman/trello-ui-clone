@@ -15,7 +15,7 @@ function CardComposer() {
           <button className={styles.saveEntity}>Add Card</button>
           <button
             className={styles.cancelEntity}
-            onClick={() => setShowAddCardForm(false)}
+            onClick={() => {}}
           ></button>
         </div>
       </div>

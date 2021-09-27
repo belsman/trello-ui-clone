@@ -5,6 +5,7 @@ import styles from "./boardDetail.module.css";
 import Header from "./Header";
 import BoardListItem from "./BoardListItem";
 import AddListButton from "./AddListButton";
+import ListComposer from "./ListComposer";
 
 function BoardDetail({ match }) {
   const { boardId } = match.params;
@@ -39,7 +40,8 @@ function BoardDetail({ match }) {
           {renderedLists}
         </div>
         <div className="create-list" className={styles.createBoard}>
-          <AddListButton />
+          {/* <AddListButton /> */}
+          {<ListComposer />}
         </div>
       </main>
     </div>

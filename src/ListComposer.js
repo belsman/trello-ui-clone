@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./EntityComposerForm.module.css";
 
 function ListComposer() {
   return (
@@ -9,7 +10,7 @@ function ListComposer() {
           <button className={styles.saveEntity}>Add list</button>
           <button
            className={styles.cancelEntity}
-           onClick={() => setShowAddListForm(false)}
+           onClick={() => {}}
           ></button>
         </div>
       </div>
