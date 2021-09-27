@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./EntityComposerForm.module.css";
 
-function ListComposer() {
+function ListComposer({ onClose }) {
   return (
     <div className={`${styles.addEntityFormContainer} ${styles.addListForm}`}>
       <input type="text" name="listName" id="create-list" autoFocus />
@@ -10,7 +10,7 @@ function ListComposer() {
           <button className={styles.saveEntity}>Add list</button>
           <button
            className={styles.cancelEntity}
-           onClick={() => {}}
+           onClick={onClose}
           ></button>
         </div>
       </div>

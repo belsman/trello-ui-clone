@@ -10,6 +10,8 @@ import ListComposer from "./ListComposer";
 function BoardDetail({ match }) {
   const { boardId } = match.params;
 
+  const [ showAddListComposer, setShowAddListComposer ] = useState(false);
+
   const board = useSelector(state => state.boards.data
     .find(board => board.id === Number(boardId)));
 
@@ -39,9 +41,12 @@ function BoardDetail({ match }) {
         <div className={styles.boardLists}>
           {renderedLists}
         </div>
-        <div className="create-list" className={styles.createBoard}>
-          {/* <AddListButton /> */}
-          {<ListComposer />}
+        <div className={styles.createBoard}>
+          { 
+            showAddListComposer ? 
+            <ListComposer onClose={() => setShowAddListComposer(false)} /> :
+            <AddListButton onClick={() => setShowAddListComposer(true)} />
+          }
         </div>
       </main>
     </div>
