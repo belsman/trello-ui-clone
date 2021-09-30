@@ -7,10 +7,18 @@ import CardComposer from "./CardComposer";
 
 
 function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
-  const { name, cards, id: listId } = list;
+  const { name, cards, cardsOrder, id: listId } = list;
 
-  const renderedCards = cards.map((card, index) => 
-    <Card card={card} index={index} setSelectedCardComposerId={setSelectedCardComposerId} />);
+  const renderedCards = cardsOrder.map((cardId, index) => {
+    const card = cards.find(item => item.id === cardId);
+    return (
+      <Card 
+        card={card}
+        index={index}
+        setSelectedCardComposerId={setSelectedCardComposerId}
+      />
+    )
+  });
 
   return (
     <section className={styles.list}>
@@ -25,7 +33,7 @@ function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
           (provided) => {
             return (
               <div 
-                className="cards"
+                className={styles.cards}
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
