@@ -11,6 +11,7 @@ const boards = [
         order: 0,
         creator: "belsman",
         board: 9,
+        cardsOrder: [2, 1, 3],
         cards: [
           {
             id: 1,
@@ -31,7 +32,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 22,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman"
@@ -43,7 +43,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 22,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman",
@@ -56,6 +55,7 @@ const boards = [
         order: 0,
         creator: "belsman",
         board: 9,
+        cardsOrder: [4, 5],
         cards: [
           {
             id: 4,
@@ -64,7 +64,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 23,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman",
@@ -76,7 +75,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 23,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman",
@@ -89,6 +87,7 @@ const boards = [
         order: 0,
         creator: "belsman",
         board: 9,
+        cardsOrder: [6, 7],
         cards: [
           {
             id: 6,
@@ -97,7 +96,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 24,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman",
@@ -109,7 +107,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 24,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman",
