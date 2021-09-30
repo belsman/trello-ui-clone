@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
+import { DragDropContext } from "react-beautiful-dnd";
 import BoardNav from "./BoardNav";
 import styles from "./boardDetail.module.css";
 import Header from "./Header";
-import BoardListItem from "./BoardListItem";
+import Column from "./Column";
 import AddListButton from "./AddListButton";
 import ListComposer from "./ListComposer";
 
@@ -30,8 +31,8 @@ function BoardDetail({ match }) {
   }
 
   const lists = board.lists;
-  const renderedLists = lists.map(
-    list => <BoardListItem
+  const renderedColumns = lists.map(
+    list => <Column
       key={list.id}
       list={list}
       selectedCardComposerId={selectedCardComposerId}
@@ -39,13 +40,19 @@ function BoardDetail({ match }) {
     />
   );
 
+  const onDragEndHandler = result => { /* TODO:Reorder our items  */};
+
   return (
     <div className={styles.rootDetail} onClick={handleOuterClick}>
       <Header />
       <BoardNav />
       <main className={styles.board}>
         <div className={styles.boardLists}>
-          {renderedLists}
+          <DragDropContext
+            onDragEnd={onDragEndHandler}
+          >
+            {renderedColumns}
+          </DragDropContext>
         </div>
         <div className={styles.createBoard}>
           { 

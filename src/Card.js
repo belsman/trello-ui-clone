@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Draggable } from "react-beautiful-dnd";
 import Modal from "react-modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -8,8 +9,8 @@ import CardDetail from "./CardDetail";
 
 Modal.setAppElement('#root');
 
-function Card({ card, setSelectedCardComposerId }) {
-  const { title } = card;
+function Card({ card, index, setSelectedCardComposerId }) {
+  const { title, id: cardId } = card;
   const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
   const customStyles = {
@@ -29,7 +30,7 @@ function Card({ card, setSelectedCardComposerId }) {
     },
   };
 
-  const cardExceptOnClickListener = e => {
+  const cardExcerptOnClickListener = e => {
     e.stopPropagation();
     setModalIsOpen(true);
     setSelectedCardComposerId('');
@@ -37,15 +38,29 @@ function Card({ card, setSelectedCardComposerId }) {
 
   return (
     <>
-      <div
-        className={styles.card}
-        onClick={cardExceptOnClickListener}
+      <Draggable
+        draggableId={`card-${cardId}`}
+        index={index}
       >
-        <span className={styles.cardTitle}>{title}</span>
-        <button type="button" className={styles.editTitle}>
-          <FontAwesomeIcon icon={faPencilAlt} />
-        </button>
-      </div>
+        {
+          (provided) => {
+            return (
+              <div
+                className={styles.card}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                ref={provided.innerRef}
+                onClick={cardExcerptOnClickListener}
+              >
+                <span className={styles.cardTitle}>{title}</span>
+                <button type="button" className={styles.editTitle}>
+                  <FontAwesomeIcon icon={faPencilAlt} />
+                </button>
+              </div>
+            )
+          }
+        }
+      </Draggable>
       <Modal
         isOpen={modalIsOpen}
         style={customStyles}
