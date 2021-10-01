@@ -10,9 +10,10 @@ function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
   const { name, cards, cardsOrder, id: listId } = list;
 
   const renderedCards = cardsOrder.map((cardId, index) => {
+    // Replace with caching!
     const card = cards.find(item => item.id === cardId);
     return (
-      <Card 
+      <Card
         card={card}
         index={index}
         setSelectedCardComposerId={setSelectedCardComposerId}

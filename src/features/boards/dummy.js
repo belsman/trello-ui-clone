@@ -20,7 +20,6 @@ const boards = [
             assigned: null,
             board: 9,
             list: 22,
-            order: 0,
             started: null,
             completed: null,
             creator: "belsman"
@@ -55,7 +54,7 @@ const boards = [
         order: 0,
         creator: "belsman",
         board: 9,
-        cardsOrder: [4, 5],
+        cardsOrder: [5, 4],
         cards: [
           {
             id: 4,
