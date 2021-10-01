@@ -1,12 +1,23 @@
-import React from "react";
-// import { useHistory } from "react-router";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "./userSlice";
 import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
 import logo from '../../logo.svg';
 
 
 function Login() {
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(login(email, password));
+  };
+
   return (
     <section className={styles.root}>
       <header className={styles.logoHeader}>
@@ -15,9 +26,23 @@ function Login() {
       <section class={styles.mainContent}>
         <article class={styles.innerContent}>
           <h1 className={styles.brandlabel}>Log in to Trello</h1>
-          <form>
-            <input type="email" name="email" placeholder="Enter email" required />
-            <input type="password" name="password" placeholder="Enter password" required />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              required
+              value={email}
+              onChange={(e) => {setEmail(e.target.value)}}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              required
+              value={password}
+              onChange={(e) => {setPassword(e.target.value)}}
+            />
             <button type="submit">Log in</button>
           </form>
           <p className={styles.descriptors}>OR</p>
