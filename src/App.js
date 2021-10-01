@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import { Route, Switch } from 'react-router-dom';
-import Login from './Login.js';
-import Register from './Register';
+import Login from './features/user/Login';
+import Register from './features/user/Register';
 import Home from "./Home";
 import BoardDetail from './BoardDetail';
 import CardDetail from './CardDetail';
