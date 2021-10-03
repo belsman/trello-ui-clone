@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import boardStyle from "./CreateBoard.module.css";
 
-const NewBoardForm = () => {
+const NewBoardForm = ({ closeFn }) => {
   const [ newBoardTitle, setNewBoardTitle ] = useState('');
 
   return (
@@ -15,10 +15,16 @@ const NewBoardForm = () => {
           value={newBoardTitle}
           onChange={e => setNewBoardTitle(e.target.value)}
           className={boardStyle.titleInput}
+          required
         />
         <div className={boardStyle.actionButton}>
-          <button className={boardStyle.submit} type="button">Create</button>
-          <button className={boardStyle.cancel} type="button"></button>
+          <button className={boardStyle.submit} type="submit">Create</button>
+          <button
+           className={boardStyle.cancel}
+           type="button"
+           onClick={() => closeFn()}
+          >
+          </button>
         </div>
       </form>
     </div>
@@ -62,7 +68,9 @@ function CreateBoardButton({ styles }) {
         onRequestClose={() => setModalIsOpen(false)}
         shouldCloseOnOverlayClick={true}
       >
-        <NewBoardForm />
+        <NewBoardForm
+          closeFn={() => setModalIsOpen(false)}
+        />
       </Modal>
     </>
   );
