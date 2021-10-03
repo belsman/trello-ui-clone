@@ -9,8 +9,7 @@ const storeName = "brello";
 export const fetchUser = createAsyncThunk(
   'auth/fetchUser',
   async () => {
-    const response = await axios.get(`${baseUrl}/auth-user/`);
-    const data = await response.data;
+    const { data } = await axios.get(`${baseUrl}/auth-user/`);
     return data;
   }
 );
@@ -18,8 +17,7 @@ export const fetchUser = createAsyncThunk(
 export const login = createAsyncThunk(
   'auth/logIn',
   async (credentials) => {
-    const response = await axios.post(`${baseUrl}/login/`, credentials);
-    const data = await response.data;
+    const { data } = await axios.post(`${baseUrl}/login/`, credentials);
     localStorage.setItem(storeName, data.token);
     return data;
   }
@@ -28,8 +26,7 @@ export const login = createAsyncThunk(
 export const register = createAsyncThunk(
   'auth/Register',
   async (credentials) => {
-    const response = await axios.post(`${baseUrl}/register/`, credentials);
-    const data = await response.data;
+    const { data } = await axios.post(`${baseUrl}/register/`, credentials);
     localStorage.setItem(storeName, data.token);
     return data;
   }

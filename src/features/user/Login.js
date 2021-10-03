@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "./userSlice";
 import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
@@ -13,10 +13,16 @@ function Login() {
 
   const dispatch = useDispatch();
 
+  const user = useSelector(state => state.user);
+
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(login(email, password));
+    dispatch(login({ username: email, password }));
   };
+
+  if (user.id) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <section className={styles.root}>
@@ -33,7 +39,7 @@ function Login() {
               placeholder="Enter email"
               required
               value={email}
-              onChange={(e) => {setEmail(e.target.value)}}
+              onChange={e => setEmail(e.target.value)}
             />
             <input
               type="password"
@@ -41,7 +47,7 @@ function Login() {
               placeholder="Enter password"
               required
               value={password}
-              onChange={(e) => {setPassword(e.target.value)}}
+              onChange={e => setPassword(e.target.value)}
             />
             <button type="submit">Log in</button>
           </form>

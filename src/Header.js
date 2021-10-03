@@ -18,7 +18,7 @@ function Header() {
       </div>
 
       <div className={styles.middleNav}>
-        <span class={styles.brandLogo}></span>
+        <span className={styles.brandLogo}></span>
       </div>
 
       <div className={styles.rightNav}>
