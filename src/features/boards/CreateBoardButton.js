@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import boardStyle from "./CreateBoard.module.css";
 
 const NewBoardForm = () => {
   const [ newBoardTitle, setNewBoardTitle ] = useState('');
 
   return (
-    <div>
+    <div className={boardStyle.root}>
       <form>
         <input
           type="text"
           name="newboard"
           placeholder="Add board title"
           value={newBoardTitle}
-          onChange={setNewBoardTitle}
+          onChange={e => setNewBoardTitle(e.target.value)}
+          className={boardStyle.titleInput}
         />
-        <button type="button">Create</button>
+        <div className={boardStyle.actionButton}>
+          <button className={boardStyle.submit} type="button">Create</button>
+          <button className={boardStyle.cancel} type="button"></button>
+        </div>
       </form>
     </div>
   );
@@ -31,6 +36,7 @@ function CreateBoardButton({ styles }) {
       width: '35%',
       height: '100px',
       padding: '0',
+      margin: '0',
       top: '10%',
       left: '50%',
       right: 'auto',

@@ -1,0 +1,47 @@
+.root {
+  padding: 0.5rem;
+  height: 100%;
+}
+
+input.titleInput {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.actionButton {
+  margin-top: 1rem;
+}
+
+.actionButton button {
+  width: auto;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 500;
+  background-color: all 0.3s ease-in-out;
+}
+
+button.submit {
+  background-color: MediumSeaGreen;;
+  color: #fff;
+  font-size: 14px;
+}
+
+button.submit:hover {
+  background-color: rgb(58, 185, 115);
+}
+
+button.cancel {
+  margin-left: 0.6rem;
+  color: #a0a9b8;
+  transition: color 0.2s ease-in-out;
+}
+
+button.cancel::before {
+  content: "\2715";
+  font-size: 14px;
+}
+
+button.cancel:hover {
+  color: #172b4d;
+}
