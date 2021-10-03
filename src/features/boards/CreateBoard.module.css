@@ -8,6 +8,10 @@ input.titleInput {
   margin: 0;
 }
 
+input.titleInput:focus {
+  border: 2px solid dodgerblue;
+}
+
 .actionButton {
   margin-top: 1rem;
 }
@@ -32,7 +36,7 @@ button.submit:hover {
 }
 
 button.cancel {
-  margin-left: 0.6rem;
+  margin-left: 0.4rem;
   color: #a0a9b8;
   transition: color 0.2s ease-in-out;
 }
