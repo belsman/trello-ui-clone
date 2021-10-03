@@ -2,7 +2,9 @@ import React from "react";
 import { useSelector } from 'react-redux';
 import { selectAllBoard } from "./boardsSlice";
 import styles from "./BoardList.module.css";
+
 import { useHistory } from "react-router-dom";
+import CreateBoardButton from "./CreateBoardButton";
 
 function BoardList() {
   const boards = useSelector(selectAllBoard);
@@ -35,9 +37,7 @@ function BoardList() {
       <ul className={styles.boardList}>
         {renderedBoard}
         <li key={'board-creator'} className={styles.boardItem}>
-          <div id={styles.createBoard} className={styles.boardTile}>
-            <span>Create new board</span>
-          </div>
+          <CreateBoardButton styles={styles} />
         </li>
       </ul>
     </div>
