@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import axios from "axios";
-import dummy from "./dummy";
+import axios from "axios";
+// import dummy from "./dummy";
 
 const initialState = {
-  data: dummy,
+  data: [],
   status: 'idle',
   error: null
 };
 
-// export const fetchBoards = createAsyncThunk("boards/fetchBoard", async () => {
-//     const response = await axios.get("http://localhost:8000/boards/");
-//     const data = await response.data;
-//     return data;
-// });
+export const fetchBoards = createAsyncThunk("boards/fetchBoard", async () => {
+    const response = await axios.get("http://localhost:8000/boards/");
+    const data = await response.data;
+    return data;
+});
 
 // export const addNewPost = createAsyncThunk(
 //   "posts/addNewPost",

@@ -1,13 +1,25 @@
-import React from "react";
-import { useSelector } from 'react-redux';
-import { selectAllBoard } from "./boardsSlice";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+
+import CreateBoardButton from "./CreateBoardButton";
+
+import { selectAllBoard, fetchBoards } from "./boardsSlice";
 import styles from "./BoardList.module.css";
 
-import { useHistory } from "react-router-dom";
-import CreateBoardButton from "./CreateBoardButton";
 
 function BoardList() {
   const boards = useSelector(selectAllBoard);
+  const boardStatus = useSelector(state => state.boards.status);
+  const error = useSelector(state => state.boards.error);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (boardStatus === 'idle') {
+      dispatch(fetchBoards());
+    }
+  }, [boardStatus, dispatch]);
 
   const BoardTile = ({ board }) => {
     const history = useHistory();
