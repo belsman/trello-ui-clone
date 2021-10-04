@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from "axios";
-// import dummy from "./dummy";
 
 const initialState = {
   data: [],
@@ -9,8 +8,12 @@ const initialState = {
 };
 
 export const fetchBoards = createAsyncThunk("boards/fetchBoard", async () => {
-    const response = await axios.get("http://localhost:8000/boards/");
-    const data = await response.data;
+    const { data } = await axios
+      .get("http://localhost:8000/boards/", {
+        headers: {
+          'Authorization': `token ${localStorage.getItem("brello")}`
+        }
+      });
     return data;
 });
 
@@ -27,17 +30,17 @@ const boardsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    // [fetchBoards.pending]: (state) => {
-    //   state.status = 'loading';
-    // },
-    // [fetchBoards.fulfilled]: (state, action) => {
-    //   state.status = 'succeeded';
-    //   state.data = state.data.concat(action.payload);
-    // },
-    // [fetchBoards.rejected]: (state, action) => {
-    //   state.status = 'failed';
-    //   state.error = action.error.message;
-    // },
+    [fetchBoards.pending]: (state) => {
+      state.status = 'loading';
+    },
+    [fetchBoards.fulfilled]: (state, action) => {
+      state.status = 'succeeded';
+      state.data = state.data.concat(action.payload);
+    },
+    [fetchBoards.rejected]: (state, action) => {
+      state.status = 'failure';
+      state.error = action.error.message;
+    },
 
     // [addNewPost.fulfilled]: (state, action) => {
     //   state.posts.push(action.payload);
