@@ -7,7 +7,7 @@ import CardComposer from "./CardComposer";
 
 
 function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
-  const { name, cards, cards_order: cardsOrder, id: listId } = list;
+  const { name, cards, cards_order: cardsOrder, id: listId, board: boardId } = list;
 
   const renderedCards = cardsOrder.map((cardId, index) => {
     // Replace with caching!
@@ -48,8 +48,14 @@ function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
       <footer className={styles.listFooter}>
         <div className={styles.addCardAction}>
           { (selectedCardComposerId === listId) ?
-            <CardComposer onCancel={() => setSelectedCardComposerId('')} /> :
-            <AddCardButton onClick={() => setSelectedCardComposerId(listId)} />
+            <CardComposer
+              listId={listId}
+              boardId={boardId}
+              onCancel={() => setSelectedCardComposerId('')}
+            /> :
+            <AddCardButton
+              onClick={() => setSelectedCardComposerId(listId)}
+            />
           }
         </div>
       </footer>

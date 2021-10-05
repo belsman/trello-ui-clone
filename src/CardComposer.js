@@ -1,21 +1,33 @@
 import React, { useState } from "react";
 import { unwrapResult } from '@reduxjs/toolkit';
+import { useDispatch } from "react-redux";
 import TextareaAutosize from 'react-textarea-autosize';
+import { addNewCard } from "./features/boards/boardsSlice";
 import styles from "./EntityComposerForm.module.css"
 
-function CardComposer({ onCancel }) {
+function CardComposer({ boardId, listId, onCancel }) {
+  console.log(`***** boaedId ${boardId} -- listId ${listId} ****`)
   const [ cardTitle, setCardTitle ] = useState('');
   const [ addRequestStatus, setAddRequestStatus ] = useState('idle');
 
-  const canSave = [cardTitle].every(Boolean) && addRequestStatus === 'idle';
+  const dispatch = useDispatch();
 
   const onSubmitCardHandler = e => {
     if (e) {
       e.preventDefault();
     }
-    alert(`Add card! ${cardTitle}`);
-    // Assuming we dispatch! to add the card;
-    setCardTitle('');
+    try {
+      setAddRequestStatus('pending');
+      const resultAction = dispatch(addNewCard(
+        { title: cardTitle, list: listId, board: boardId }
+      ));
+      unwrapResult(resultAction);
+      setCardTitle('');
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setAddRequestStatus('idle');
+    }
   };
 
   return (
