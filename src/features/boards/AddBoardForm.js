@@ -1,12 +1,27 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { unwrapResult } from '@reduxjs/toolkit';
+import { addNewBoard } from "./boardsSlice";
 import styles from "./CreateBoard.module.css";
 
 function AddBoardForm({ closeFn }) {
   const [ newBoardTitle, setNewBoardTitle ] = useState('');
+  const [ addRequestStatus, setAddRequestStatus] = useState('');
+  const dispatch = useDispatch();
   
   const newBoardHandler = e => {
     e.preventDefault();
-    alert(`The name of the board is => ${newBoardTitle}`);
+    try {
+      setAddRequestStatus('pending');
+      const resultAction = dispatch(addNewBoard({ name: newBoardTitle }));
+      unwrapResult(resultAction);
+      setNewBoardTitle('');
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setAddRequestStatus('idle');
+    }
+    closeFn();
   };
 
   return (

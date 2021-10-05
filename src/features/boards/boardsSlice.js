@@ -48,7 +48,7 @@ const boardsSlice = createSlice({
     },
 
     [addNewBoard.fulfilled]: (state, action) => {
-      state.boards.push(action.payload);
+      state.data.push(action.payload);
     }
 
   }
