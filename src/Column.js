@@ -7,7 +7,7 @@ import CardComposer from "./CardComposer";
 
 
 function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
-  const { name, cards, cardsOrder, id: listId } = list;
+  const { name, cards, cards_order: cardsOrder, id: listId } = list;
 
   const renderedCards = cardsOrder.map((cardId, index) => {
     // Replace with caching!

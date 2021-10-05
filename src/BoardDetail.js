@@ -30,15 +30,20 @@ function BoardDetail({ match }) {
     );
   }
 
-  const lists = board.lists;
-  const renderedColumns = lists.map(
-    list => <Column
-      key={list.id}
-      list={list}
-      selectedCardComposerId={selectedCardComposerId}
-      setSelectedCardComposerId={setSelectedCardComposerId}
-    />
-  );
+  // const lists = board.lists;
+  const { lists_order: listsOrder, lists } = board;
+
+  const renderedColumns = listsOrder.map((listId, index) => {
+    const list = lists.find(item => item.id === listId);
+    return (
+      <Column
+        key={list.id}
+        list={list}
+        selectedCardComposerId={selectedCardComposerId}
+        setSelectedCardComposerId={setSelectedCardComposerId}
+      />
+    );
+  });
 
   const onDragEndHandler = result => { /* TODO:Reorder our items  */};
 
