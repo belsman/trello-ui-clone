@@ -30,7 +30,6 @@ function BoardDetail({ match }) {
     );
   }
 
-  // const lists = board.lists;
   const { lists_order: listsOrder, lists } = board;
 
   const renderedColumns = listsOrder.map((listId, index) => {
