@@ -17,13 +17,18 @@ export const fetchBoards = createAsyncThunk("boards/fetchBoard", async () => {
     return data;
 });
 
-// export const addNewPost = createAsyncThunk(
-//   "posts/addNewPost",
-//   async initialPost => {
-//     const response = await client.post("/fakeApi/posts", { post: initialPost });
-//     return response.post;
-//   }
-// );
+export const addNewBoard = createAsyncThunk(
+  "boards/addNewBoard",
+  async initialPost => {
+    const { data } = await axios
+      .post("http://localhost:8000/boards/", initialPost, {
+        headers: {
+          'Authorization': `token ${localStorage.getItem("brello")}`
+        }
+      });
+    return data;
+  }
+);
 
 const boardsSlice = createSlice({
   name: 'boards',
@@ -42,9 +47,9 @@ const boardsSlice = createSlice({
       state.error = action.error.message;
     },
 
-    // [addNewPost.fulfilled]: (state, action) => {
-    //   state.posts.push(action.payload);
-    // }
+    [addNewBoard.fulfilled]: (state, action) => {
+      state.boards.push(action.payload);
+    }
 
   }
 });
