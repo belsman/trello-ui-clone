@@ -8,7 +8,7 @@
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100%;
   height: auto;
 }
@@ -20,5 +20,6 @@
 div.createBoard {
   width: 272px;
   flex-basis: 272px;
+  display: block;
   align-self: flex-start;
 }
