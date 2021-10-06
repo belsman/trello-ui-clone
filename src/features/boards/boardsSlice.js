@@ -30,6 +30,19 @@ export const addNewBoard = createAsyncThunk(
   }
 );
 
+export const addNewList = createAsyncThunk(
+  "boards/addNewList",
+  async initialPost => {
+    const { data } = await axios
+      .post("http://localhost:8000/lists/", initialPost, {
+        headers: {
+          'Authorization': `token ${localStorage.getItem("brello")}`
+        }
+      });
+    return data;
+  }
+);
+
 export const addNewCard = createAsyncThunk(
   "boards/addNewCard",
   async initialPost => {
@@ -64,13 +77,21 @@ const boardsSlice = createSlice({
       state.data.push(action.payload);
     },
 
+    [addNewList.fulfilled]: (state, action) => {
+      const { payload } = action;
+      const board = state.data.find(board => board.id === payload.board);
+      board.lists.push(payload);
+      board.lists_order.push(payload.id);
+    },
+
     [addNewCard.fulfilled]: (state, action) => {
       const { payload } = action;
       const board = state.data.find(board => board.id === payload.board);
       const list = board.lists.find(list => list.id === payload.list);
       list.cards.push(payload);
       list.cards_order.push(payload.id);
-    }
+    },
+
 
   }
 });

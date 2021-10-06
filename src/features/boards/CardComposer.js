@@ -49,7 +49,12 @@ function CardComposer({ boardId, listId, onCancel }) {
         />
         <div className={styles.addEntityFormActions}>
           <div className={styles.buttonsGroup}>
-            <button type="submit" className={styles.saveEntity}>Add Card</button>
+            <button
+              type="submit"
+              className={styles.saveEntity}
+            >
+              Add Card
+            </button>
             <button
               className={styles.cancelEntity}
               onClick={onCancel}

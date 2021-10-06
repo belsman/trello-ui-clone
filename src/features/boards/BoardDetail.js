@@ -61,7 +61,10 @@ function BoardDetail({ match }) {
         <div className={styles.createBoard}>
           { 
             showAddListComposer ? 
-            <ListComposer onCancel={() => setShowAddListComposer(false)} />
+            <ListComposer
+              boardId={boardId}
+              onCancel={() => setShowAddListComposer(false)}
+            />
             :
             <AddListButton onClick={() => setShowAddListComposer(true)} />
           }
