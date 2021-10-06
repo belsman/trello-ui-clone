@@ -7,13 +7,18 @@
 .board {
   padding: 0.5rem;
   display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  width: 100%;
+  height: auto;
 }
 
 .boardLists {
   display: flex;
 }
 
-.createBoard {
+div.createBoard {
   width: 272px;
+  flex-basis: 272px;
   align-self: flex-start;
 }

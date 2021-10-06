@@ -57,17 +57,17 @@ function BoardDetail({ match }) {
           >
             {renderedColumns}
           </DragDropContext>
-        </div>
-        <div className={styles.createBoard}>
-          { 
-            showAddListComposer ? 
-            <ListComposer
-              boardId={boardId}
-              onCancel={() => setShowAddListComposer(false)}
-            />
-            :
-            <AddListButton onClick={() => setShowAddListComposer(true)} />
-          }
+          <div className={styles.createBoard}>
+            { 
+              showAddListComposer ? 
+              <ListComposer
+                boardId={boardId}
+                onCancel={() => setShowAddListComposer(false)}
+              />
+              :
+              <AddListButton onClick={() => setShowAddListComposer(true)} />
+            }
+          </div>
         </div>
       </main>
     </div>
