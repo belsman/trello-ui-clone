@@ -11,6 +11,8 @@
   color: #5e6c84;
   margin-right: 0.7rem;
   align-self: flex-start;
+  max-height: 100%;
+  overflow-y: auto;
 }
   
 header.listHeader {
