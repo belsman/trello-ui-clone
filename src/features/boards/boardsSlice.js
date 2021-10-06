@@ -65,12 +65,11 @@ const boardsSlice = createSlice({
     },
 
     [addNewCard.fulfilled]: (state, action) => {
-      console.log("***** SHow me something like action *****");
-      console.log(action);
-      // 1. get the asso. board from the state
-      // 2. get the asso. list from the board
-      // 3. append the card to the list's cards array
-      // state.data.push(action.payload);
+      const { payload } = action;
+      const board = state.data.find(board => board.id === payload.board);
+      const list = board.lists.find(list => list.id === payload.list);
+      list.cards.push(payload);
+      list.cards_order.push(payload.id);
     }
 
   }

@@ -6,7 +6,6 @@ import { addNewCard } from "./features/boards/boardsSlice";
 import styles from "./EntityComposerForm.module.css"
 
 function CardComposer({ boardId, listId, onCancel }) {
-  console.log(`***** boaedId ${boardId} -- listId ${listId} ****`)
   const [ cardTitle, setCardTitle ] = useState('');
   const [ addRequestStatus, setAddRequestStatus ] = useState('idle');
 

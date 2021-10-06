@@ -17,6 +17,7 @@ function Column({ list, selectedCardComposerId, setSelectedCardComposerId }) {
         card={card}
         index={index}
         setSelectedCardComposerId={setSelectedCardComposerId}
+        key={card.id}
       />
     )
   });
