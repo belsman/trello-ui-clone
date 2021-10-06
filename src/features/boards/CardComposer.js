@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { unwrapResult } from '@reduxjs/toolkit';
 import { useDispatch } from "react-redux";
 import TextareaAutosize from 'react-textarea-autosize';
-import { addNewCard } from "./features/boards/boardsSlice";
+import { addNewCard } from "./boardsSlice";
 import styles from "./EntityComposerForm.module.css"
 
 function CardComposer({ boardId, listId, onCancel }) {

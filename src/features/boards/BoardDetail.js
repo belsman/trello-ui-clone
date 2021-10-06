@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { DragDropContext } from "react-beautiful-dnd";
-import BoardNav from "./BoardNav";
+import BoardNav from "../../BoardNav";
 import styles from "./boardDetail.module.css";
-import Header from "./Header";
+import Header from "../../Header";
 import Column from "./Column";
 import AddListButton from "./AddListButton";
 import ListComposer from "./ListComposer";

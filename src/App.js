@@ -4,8 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Login from './features/user/Login';
 import Register from './features/user/Register';
 import Home from "./Home";
-import BoardDetail from './BoardDetail';
-import CardDetail from './CardDetail';
+import BoardDetail from './features/boards/BoardDetail';
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Register} />
         <Route path="/boards/:boardId" exact component={BoardDetail} />
-        <Route path="/card-detail" component={CardDetail} />
         <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
