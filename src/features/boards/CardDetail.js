@@ -1,16 +1,22 @@
 import React, { useState } from "react";
+import { unwrapResult } from '@reduxjs/toolkit';
+import { useDispatch } from "react-redux";
 import TextareaAutosize from 'react-textarea-autosize';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAlignLeft, faChalkboard, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
+import { editCard } from "./boardsSlice";
 
 import styles from "./CardDetail.module.css";
 
 function CardDetail({ card, closeFn }) {
 
-  const { title, description, creator } = card;
+  const { id, title, description, creator } = card;
 
   const [ titleValue, setTitleValue ] = useState(title);
   const [ descValue, setDescValue ]  = useState(description);
+  const [ addRequestStatus, setAddRequestStatus ] = useState('idle');
+
+  const dispatch = useDispatch();
 
   const resetToOriginalValue = e => {
     setTitleValue(title);
@@ -26,7 +32,19 @@ function CardDetail({ card, closeFn }) {
 
   const handleCardEdit = e => {
     e.preventDefault();
-    alert("We're going to edit this!");
+    try {
+      setAddRequestStatus('pending');
+      const resultAction = dispatch(editCard(
+        { id, title: titleValue, description: descValue }
+      ));
+      unwrapResult(resultAction);
+      // alert("Edit was successful!"); //-> flash the user
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setAddRequestStatus('idle');
+    }
+    
   };
   
   return (
@@ -42,6 +60,7 @@ function CardDetail({ card, closeFn }) {
                 minRows={1}
                 maxRows={3}
                 value={titleValue}
+                required
                 onChange={e => setTitleValue(e.target.value) }
               />
             </div>

@@ -56,6 +56,21 @@ export const addNewCard = createAsyncThunk(
   }
 );
 
+
+export const editCard = createAsyncThunk(
+  "boards/editCard",
+  async initialPost => {
+    const { data } = await axios
+      .patch(`http://localhost:8000/cards/${initialPost.id}/`, initialPost, {
+        headers: {
+          'Authorization': `token ${localStorage.getItem("brello")}`
+        }
+      });
+    return data;
+  }
+);
+
+
 const boardsSlice = createSlice({
   name: 'boards',
   initialState,
@@ -90,6 +105,13 @@ const boardsSlice = createSlice({
       const list = board.lists.find(list => list.id === payload.list);
       list.cards.push(payload);
       list.cards_order.push(payload.id);
+    },
+    [editCard.fulfilled]: (state, action) => {
+      const { payload } = action;
+      const board = state.data.find(board => board.id === payload.board);
+      const list = board.lists.find(list => list.id === payload.list);
+      const cardIndex = list.cards.findIndex(card => card.id === payload.id);
+      list.cards[cardIndex] = payload;
     },
 
 
