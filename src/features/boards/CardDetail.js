@@ -12,6 +12,13 @@ function CardDetail({ card, closeFn }) {
   const [ titleValue, setTitleValue ] = useState(title);
   const [ descValue, setDescValue ]  = useState(description);
 
+  const CardAction = () => (
+    <div className={styles.editAction}>
+      <button type="submit">Edit</button>
+      <button type="button">Reset</button>
+    </div>
+  );
+  
   return (
     <article className={styles.cardDetail}>
       <main className={styles.cardDetailMain}>
@@ -24,7 +31,7 @@ function CardDetail({ card, closeFn }) {
               minRows={1}
               maxRows={3}
               value={titleValue}
-              onChange={e => setTitleValue(e.target.value)}
+              onChange={e => setTitleValue(e.target.value) }
             />
           </div>
         </div>
@@ -54,10 +61,7 @@ function CardDetail({ card, closeFn }) {
             />
           </div>
         </div>
-        <div className={styles.editAction}>
-          <button type="submit">Edit</button>
-          <button type="button">Cancel</button>
-        </div>
+        { (title !== titleValue || description !== descValue) && <CardAction /> }
       </main>
       <aside className={styles.cardDetailAction}>
         <div style={{ display: 'flex', justifyContent: 'space-between'}}>
