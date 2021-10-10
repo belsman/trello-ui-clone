@@ -12,56 +12,68 @@ function CardDetail({ card, closeFn }) {
   const [ titleValue, setTitleValue ] = useState(title);
   const [ descValue, setDescValue ]  = useState(description);
 
+  const resetToOriginalValue = e => {
+    setTitleValue(title);
+    setDescValue(description);
+  };
+
   const CardAction = () => (
     <div className={styles.editAction}>
       <button type="submit">Edit</button>
-      <button type="button">Reset</button>
+      <button type="button" onClick={resetToOriginalValue}>Reset</button>
     </div>
   );
+
+  const handleCardEdit = e => {
+    e.preventDefault();
+    alert("We're going to edit this!");
+  };
   
   return (
     <article className={styles.cardDetail}>
       <main className={styles.cardDetailMain}>
-        <div className={styles.cardDetailTitle}>
-          <span className={styles.icon}>
-              <FontAwesomeIcon icon={faChalkboard} />
-          </span>
-          <div className={styles.cardDetailTextWrapper}>
-            <TextareaAutosize
-              minRows={1}
-              maxRows={3}
-              value={titleValue}
-              onChange={e => setTitleValue(e.target.value) }
-            />
-          </div>
-        </div>
-        <ul className={styles.immutableCardDetail}>
-          <li>
-            <div className={styles.immutableLabels}>
-              <span className={''}>
-                <FontAwesomeIcon icon={faUser} />
-              </span>
-              <span>{' '}Created by </span>
+        <form onSubmit={handleCardEdit}>
+          <div className={styles.cardDetailTitle}>
+            <span className={styles.icon}>
+                <FontAwesomeIcon icon={faChalkboard} />
+            </span>
+            <div className={styles.cardDetailTextWrapper}>
+              <TextareaAutosize
+                minRows={1}
+                maxRows={3}
+                value={titleValue}
+                onChange={e => setTitleValue(e.target.value) }
+              />
             </div>
-            <span className={styles.immutableValue}>{creator}</span>
-          </li>
-        </ul>
-        <div className={styles.desciptionWrapper}>
-          <span className={styles.icon}>
-            <FontAwesomeIcon icon={faAlignLeft} />
-          </span>
-          <div className={styles.descriptionformContent}>
-            <label>Description</label>
-            <TextareaAutosize
-              minRows={3}
-              maxRows={7}
-              value={descValue}
-              onChange={e => setDescValue(e.target.value)}
-              placeholder={"Add a more detail description..."}
-            />
           </div>
-        </div>
-        { (title !== titleValue || description !== descValue) && <CardAction /> }
+          <ul className={styles.immutableCardDetail}>
+            <li>
+              <div className={styles.immutableLabels}>
+                <span className={''}>
+                  <FontAwesomeIcon icon={faUser} />
+                </span>
+                <span>{' '}Created by </span>
+              </div>
+              <span className={styles.immutableValue}>{creator}</span>
+            </li>
+          </ul>
+          <div className={styles.desciptionWrapper}>
+            <span className={styles.icon}>
+              <FontAwesomeIcon icon={faAlignLeft} />
+            </span>
+            <div className={styles.descriptionformContent}>
+              <label>Description</label>
+              <TextareaAutosize
+                minRows={3}
+                maxRows={7}
+                value={descValue}
+                onChange={e => setDescValue(e.target.value)}
+                placeholder={"Add a more detail description..."}
+              />
+            </div>
+          </div>
+          { (title !== titleValue || description !== descValue) && <CardAction /> }
+        </form>
       </main>
       <aside className={styles.cardDetailAction}>
         <div style={{ display: 'flex', justifyContent: 'space-between'}}>
