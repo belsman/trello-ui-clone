@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextareaAutosize from 'react-textarea-autosize';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAlignLeft, faChalkboard, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,9 @@ function CardDetail({ card, closeFn }) {
 
   const { title, description, creator } = card;
 
+  const [ titleValue, setTitleValue ] = useState(title);
+  const [ descValue, setDescValue ]  = useState(description);
+
   return (
     <article className={styles.cardDetail}>
       <main className={styles.cardDetailMain}>
@@ -18,9 +21,10 @@ function CardDetail({ card, closeFn }) {
           </span>
           <div className={styles.cardDetailTextWrapper}>
             <TextareaAutosize
-              defaultValue={title}
               minRows={1}
               maxRows={3}
+              value={titleValue}
+              onChange={e => setTitleValue(e.target.value)}
             />
           </div>
         </div>
@@ -44,10 +48,15 @@ function CardDetail({ card, closeFn }) {
             <TextareaAutosize
               minRows={3}
               maxRows={7}
-              defaultValue={description}
+              value={descValue}
+              onChange={e => setDescValue(e.target.value)}
               placeholder={"Add a more detail description..."}
             />
           </div>
+        </div>
+        <div className={styles.editAction}>
+          <button type="submit">Edit</button>
+          <button type="button">Cancel</button>
         </div>
       </main>
       <aside className={styles.cardDetailAction}>
