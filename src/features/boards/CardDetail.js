@@ -7,6 +7,7 @@ import { faAlignLeft, faChalkboard, faTrash, faUser } from "@fortawesome/free-so
 import { editCard } from "./boardsSlice";
 
 import styles from "./CardDetail.module.css";
+import DeleteCardButton from "./DeleteCardButton";
 
 function CardDetail({ card, closeFn }) {
 
@@ -104,7 +105,7 @@ function CardDetail({ card, closeFn }) {
             <span className="actionIcon">
               <FontAwesomeIcon icon={faTrash} />
             </span>
-            <span className={styles.actionLabel}>Delete</span>
+            <DeleteCardButton styles={styles} />
           </li>
         </ul>
       </aside>
