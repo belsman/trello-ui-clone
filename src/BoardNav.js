@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./boardNav.module.css";
 
-function BoardNav() {
+function BoardNav({ boardName }) {
   return (
     <nav className={styles.subNav}>
       <section className={styles.firstNav}>
         <button type="button" className={styles.clickableBtn}>Board</button>
-        <h3 className={`${styles.boardName} ${styles.clickableBtn}`}>Alpha board</h3>
+        <h3 className={`${styles.boardName} ${styles.clickableBtn}`}>
+          {boardName}
+        </h3>
       </section>
       <section className={styles.secondNav}>
         <div className={styles.secondNavPart1}>

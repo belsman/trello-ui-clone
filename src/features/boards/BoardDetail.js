@@ -30,7 +30,7 @@ function BoardDetail({ match }) {
     );
   }
 
-  const { lists_order: listsOrder, lists } = board;
+  const { name: boardName, lists_order: listsOrder, lists } = board;
 
   const renderedColumns = listsOrder.map((listId, index) => {
     const list = lists.find(item => item.id === listId);
@@ -49,7 +49,7 @@ function BoardDetail({ match }) {
   return (
     <div className={styles.rootDetail} onClick={handleOuterClick}>
       <Header />
-      <BoardNav />
+      <BoardNav boardName={boardName} />
       <main className={styles.board}>
         <div className={styles.boardLists}>
           <DragDropContext
