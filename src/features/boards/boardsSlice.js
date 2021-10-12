@@ -60,8 +60,9 @@ export const addNewCard = createAsyncThunk(
 export const editCard = createAsyncThunk(
   "boards/editCard",
   async initialPost => {
+    const { cardId } = initialPost;
     const { data } = await axios
-      .patch(`http://localhost:8000/cards/${initialPost.id}/`, initialPost, {
+      .patch(`http://localhost:8000/cards/${cardId}/`, initialPost, {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
@@ -70,11 +71,26 @@ export const editCard = createAsyncThunk(
   }
 );
 
+export const deleteCard = createAsyncThunk(
+  "boards/deleteCard",
+  async initialPost => {
+    await axios
+      .delete(`http://localhost:8000/cards/${initialPost.id}/`, {
+        headers: {
+          'Authorization': `token ${localStorage.getItem("brello")}`
+        }
+      });
+    return initialPost;
+  }
+);
+
 
 const boardsSlice = createSlice({
   name: 'boards',
   initialState,
-  reducers: {},
+  reducers: {
+
+  },
   extraReducers: {
     [fetchBoards.pending]: (state) => {
       state.status = 'loading';
@@ -113,8 +129,14 @@ const boardsSlice = createSlice({
       const cardIndex = list.cards.findIndex(card => card.id === payload.id);
       list.cards[cardIndex] = payload;
     },
-
-
+    [deleteCard.fulfilled]: (state, action) => {
+      const { payload } = action;
+      const board = state.data.find(board => board.id === payload.board);
+      const list = board.lists.find(list => list.id === payload.list);
+      const cardIndex = list.cards.findIndex(card => card.id === payload.id);
+      list.cards_order.splice(cardIndex, 1);
+      list.cards.splice(cardIndex, 1);
+    },
   }
 });
 

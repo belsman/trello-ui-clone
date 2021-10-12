@@ -11,7 +11,7 @@ import DeleteCardButton from "./DeleteCardButton";
 
 function CardDetail({ card, closeFn }) {
 
-  const { id, title, description, creator } = card;
+  const { id: cardId, title, description, creator } = card;
 
   const [ titleValue, setTitleValue ] = useState(title);
   const [ descValue, setDescValue ]  = useState(description);
@@ -36,7 +36,7 @@ function CardDetail({ card, closeFn }) {
     try {
       setAddRequestStatus('pending');
       const resultAction = dispatch(editCard(
-        { id, title: titleValue, description: descValue }
+        { cardId, title: titleValue, description: descValue }
       ));
       unwrapResult(resultAction);
       // alert("Edit was successful!"); //-> flash the user
@@ -102,10 +102,7 @@ function CardDetail({ card, closeFn }) {
         </div>
         <ul>
           <li>
-            <span className="actionIcon">
-              <FontAwesomeIcon icon={faTrash} />
-            </span>
-            <DeleteCardButton styles={styles} />
+            <DeleteCardButton icon={faTrash} card={card} styles={styles} />
           </li>
         </ul>
       </aside>

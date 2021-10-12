@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-// import AddBoardForm from "./AddBoardForm";
 import ConfirmDeleteForm from "./ConfirmDeleteForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function DeleteCardButton({ styles }) {
-  const [ modalIsOpen, setModalIsOpen ] = useState(false);
+function DeleteCardButton({ styles, icon, card }) {
+  const [ deleteModalIsOpen, setDeleteModalIsOpen ] = useState(false);
 
   const customStyles = {
     overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.8)'
+      backgroundColor: 'rgba(0, 0, 0, 0)'
     },
     content: {
       width: '35%',
@@ -27,20 +27,23 @@ function DeleteCardButton({ styles }) {
 
   return (
     <>
-      <span
-        onClick={() => setModalIsOpen(true)}
-        className={styles.actionLabel}
-      >
-        Delete
-      </span>
+      <div onClick={() => setDeleteModalIsOpen(true)}>
+        <span className="actionIcon">
+          <FontAwesomeIcon icon={icon} />
+        </span>
+        <span className={styles.actionLabel}>
+          Delete
+        </span>
+      </div>
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={deleteModalIsOpen}
         style={customStyles}
-        onRequestClose={() => setModalIsOpen(false)}
+        onRequestClose={() => setDeleteModalIsOpen(false)}
         shouldCloseOnOverlayClick={true}
       >
         <ConfirmDeleteForm
-          closeFn={() => setModalIsOpen(false)}
+          card={card}
+          closeFn={() => setDeleteModalIsOpen(false)}
         />
       </Modal>
     </>

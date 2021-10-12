@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { unwrapResult } from '@reduxjs/toolkit';
-// import { addNewBoard } from "./boardsSlice";
+import { deleteCard } from "./boardsSlice";
 import styles from "./CreateBoard.module.css";
 
-const deleteCard = () => {};
-
-function ConfirmDeleteForm({ closeFn }) {
+function ConfirmDeleteForm({ card, closeFn }) {
   const [ newBoardTitle, setNewBoardTitle ] = useState('');
   const [ addRequestStatus, setAddRequestStatus] = useState('');
   const dispatch = useDispatch();
@@ -15,7 +13,7 @@ function ConfirmDeleteForm({ closeFn }) {
     e.preventDefault();
     try {
       setAddRequestStatus('pending');
-      const resultAction = dispatch(deleteCard({ name: newBoardTitle }));
+      const resultAction = dispatch(deleteCard(card));
       unwrapResult(resultAction);
       setNewBoardTitle('');
     } catch (err) {
