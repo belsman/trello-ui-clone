@@ -110,6 +110,12 @@ const boardsSlice = createSlice({
       destinationList.cards_order = destination.cardsOrder;
       destinationList.cards = destination.cards;
     },
+    reOrderList: (state, action) => {
+      const { payload } = action;
+      const { boardId, newListsOrder } = payload;
+      const board = state.data.find(board => board.id === boardId);
+      board.lists_order = newListsOrder;
+    }
   },
   extraReducers: {
     [fetchBoards.pending]: (state) => {
@@ -160,13 +166,31 @@ const boardsSlice = createSlice({
   }
 });
 
-export const { reOrderCardInList, reOrderCardBetweenLists } = boardsSlice.actions;
+export const { reOrderCardInList, reOrderCardBetweenLists, reOrderList } = boardsSlice.actions;
 
 export const selectBoardById = (state, boardId) => state.boards.data.find(board => board.id === boardId);
 
+export const reOrderListThunk = payload => (dispatch, getState) => {
+  const { boardId, result } = payload;
+  const { draggableId, source, destination } = result;
+
+  const board = selectBoardById(getState(), boardId);
+  const newListsOrder = Array.from(board.lists_order);
+
+  newListsOrder.splice(source.index, 1);
+  newListsOrder.splice(destination.index, 0, Number(draggableId));
+
+  dispatch(reOrderList({
+    boardId: board.id,
+    newListsOrder
+  }));
+
+  // notify server!
+};
+
 export const reOrderCardThunk = payload => (dispatch, getState) => {
   const { boardId, result } = payload;
-  const { draggableId, source, destination, type } = result;
+  const { draggableId, source, destination } = result;
 
   const board = selectBoardById(getState(), boardId);
 

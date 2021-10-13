@@ -7,7 +7,7 @@ import Header from "../../Header";
 import Column from "./Column";
 import AddListButton from "./AddListButton";
 import ListComposer from "./ListComposer";
-import { reOrderCardThunk } from './boardsSlice';
+import { reOrderCardThunk, reOrderListThunk } from './boardsSlice';
 
 function BoardDetail({ match }) {
   const dispatch = useDispatch();
@@ -59,6 +59,10 @@ function BoardDetail({ match }) {
           return;
         }
     
+    if (type === 'column') {
+      dispatch(reOrderListThunk({ boardId: board.id, result}));
+      return;
+    }
 
     dispatch(reOrderCardThunk({ boardId: board.id, result}));
   };

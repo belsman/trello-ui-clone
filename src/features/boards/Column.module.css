@@ -19,6 +19,7 @@ header.listHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.3rem;
 }
 
 .cards {
@@ -42,6 +43,7 @@ header.listHeader h4 {
   padding-top: 0.3rem;
   padding-bottom: 0.2rem;
   border-radius: 2px;
+  text-transform: capitalize;
 }
   
 .listFooter {
