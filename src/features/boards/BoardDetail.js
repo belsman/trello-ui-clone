@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import BoardNav from "../../BoardNav";
 import styles from "./boardDetail.module.css";
 import Header from "../../Header";
@@ -40,6 +40,7 @@ function BoardDetail({ match }) {
       <Column
         key={list.id}
         list={list}
+        index={index}
         selectedCardComposerId={selectedCardComposerId}
         setSelectedCardComposerId={setSelectedCardComposerId}
       />
@@ -71,7 +72,20 @@ function BoardDetail({ match }) {
           <DragDropContext
             onDragEnd={onDragEndHandler}
           >
-            {renderedColumns}
+            <Droppable droppableId="all-columns" direction="horizontal" type="column">
+            {
+              provided => (
+                <div
+                  className={styles.lists}
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
+                  {renderedColumns}
+                  {provided.placeholder}
+                </div>
+              )
+            }
+            </Droppable>
           </DragDropContext>
           <div className={styles.createBoard}>
             { 

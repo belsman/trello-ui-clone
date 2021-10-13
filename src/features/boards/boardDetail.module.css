@@ -6,14 +6,17 @@
 /* === board === */
 .board {
   padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  overflow-x: auto;
   width: 100%;
   height: auto;
+  border: 1px solid green;
 }
 
 .boardLists {
+  display: flex;
+}
+
+.lists {
+  flex: 1;
   display: flex;
 }
 
