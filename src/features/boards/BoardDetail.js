@@ -7,7 +7,7 @@ import Header from "../../Header";
 import Column from "./Column";
 import AddListButton from "./AddListButton";
 import ListComposer from "./ListComposer";
-import { reOrderList } from './boardsSlice';
+import { reOrderCardThunk } from './boardsSlice';
 
 function BoardDetail({ match }) {
   const dispatch = useDispatch();
@@ -58,30 +58,8 @@ function BoardDetail({ match }) {
           return;
         }
     
-    const sourceColumn = board.lists.find( list => list.id === Number(source.droppableId));
 
-    const destinationColumn = board.lists.find(
-      list => list.id === Number(destination.droppableId));
-
-    if (sourceColumn === destinationColumn) {
-      const newCardsOrder = Array.from(sourceColumn.cards_order);
-      newCardsOrder.splice(source.index, 1);
-      newCardsOrder.splice(destination.index, 0, Number(draggableId));
-
-      dispatch(reOrderList({
-        boardId: board.id,
-        listId: sourceColumn.id,
-        newCardsOrder
-      }));
-      /*
-        reOrderCardOnServer({
-          boardId,
-          source: { cardIndex: 0, columnId},
-          destination: { cardIndex: 0, columnId }
-        })
-      */
-      return;
-    }
+    dispatch(reOrderCardThunk({ boardId: board.id, result}));
   };
 
   return (

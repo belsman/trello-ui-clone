@@ -146,11 +146,64 @@ const boardsSlice = createSlice({
   }
 });
 
+export const selectBoardById = (state, boardId) => state.boards.data.find(board => board.id === boardId);
+
+export const reOrderCardThunk = payload => (dispatch, getState) => {
+  const { boardId, result } = payload;
+  const { draggableId, source, destination, type } = result;
+
+  const board = selectBoardById(getState(), boardId);
+
+  const sourceColumn = board.lists.find( list => list.id === Number(source.droppableId));
+  const destinationColumn = board.lists.find(
+    list => list.id === Number(destination.droppableId));
+
+  if (sourceColumn === destinationColumn) {
+    const newCardsOrder = Array.from(sourceColumn.cards_order);
+    newCardsOrder.splice(source.index, 1);
+    newCardsOrder.splice(destination.index, 0, Number(draggableId));
+
+    dispatch(reOrderList({
+      boardId: board.id,
+      listId: sourceColumn.id,
+      newCardsOrder
+    }));
+  } else {
+    const { cards_order: sourceCardsOrder } = sourceColumn;
+    const { cards_order: destinationCardsOrder } = destinationColumn;
+
+    const newSourceCards = Array.from(sourceColumn.cards);
+    const newSourceCardsOrder = Array.from(sourceCardsOrder);
+    newSourceCardsOrder.splice(source.index, 1);
+    const card = sourceColumn.cards[source.index];
+    const cardCopy = { ...card }
+    // remove the card from the list.car
+    // dispatch newCardsOrder on lists
+    // dispatch newCards OnList
+
+    const newDestinationCards = Array.from(destinationColumn.cards);
+    const newDestinationCardsOrder = Array.from(destinationCardsOrder);
+    newDestinationCardsOrder.splice(destination.index, 0, draggableId);
+    newDestinationCards.push(cardCopy);
+
+    // dispatch newCardsOrder on lists
+    // dispatch newCards OnList
+    
+  }
+
+  // const currentValue = selectCount(getState());
+  // if (currentValue % 2 === 1) {
+  //   dispatch(incrementByAmount(amount));
+  // }
+};
+
+
 export const { reOrderList } = boardsSlice.actions;
 
 export default boardsSlice.reducer;
 
 export const selectAllBoard = state => state.boards.data;
+
 
 // export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId);
     
