@@ -89,12 +89,19 @@ const boardsSlice = createSlice({
   name: 'boards',
   initialState,
   reducers: {
-    reOrderList: (state, action) => {
+    reOrderCardInList: (state, action) => {
       const { payload } = action;
       const { boardId, listId, newCardsOrder } = payload;
       const board = state.data.find(board => board.id === boardId);
       const list = board.lists.find(list => list.id === listId);
       list.cards_order = newCardsOrder;
+    },
+    reOrderCardBetweenLists: (state, action) => {
+      // const { payload } = action;
+      // const { boardId, listId, newCardsOrder } = payload;
+      // const board = state.data.find(board => board.id === boardId);
+      // const list = board.lists.find(list => list.id === listId);
+      // list.cards_order = newCardsOrder;
     },
   },
   extraReducers: {
@@ -163,11 +170,12 @@ export const reOrderCardThunk = payload => (dispatch, getState) => {
     newCardsOrder.splice(source.index, 1);
     newCardsOrder.splice(destination.index, 0, Number(draggableId));
 
-    dispatch(reOrderList({
+    dispatch(reOrderCardInList({
       boardId: board.id,
       listId: sourceColumn.id,
       newCardsOrder
     }));
+
   } else {
     const { cards_order: sourceCardsOrder } = sourceColumn;
     const { cards_order: destinationCardsOrder } = destinationColumn;
@@ -175,35 +183,21 @@ export const reOrderCardThunk = payload => (dispatch, getState) => {
     const newSourceCards = Array.from(sourceColumn.cards);
     const newSourceCardsOrder = Array.from(sourceCardsOrder);
     newSourceCardsOrder.splice(source.index, 1);
-    const card = sourceColumn.cards[source.index];
-    const cardCopy = { ...card }
-    // remove the card from the list.car
-    // dispatch newCardsOrder on lists
-    // dispatch newCards OnList
-
+    const card = newSourceCards.find(card => card.id === Number(draggableId));
+    const cardIndex = newSourceCards.indexOf(card);
+    newSourceCards.splice(cardIndex, 1);
+    
     const newDestinationCards = Array.from(destinationColumn.cards);
     const newDestinationCardsOrder = Array.from(destinationCardsOrder);
-    newDestinationCardsOrder.splice(destination.index, 0, draggableId);
-    newDestinationCards.push(cardCopy);
+    newDestinationCardsOrder.splice(destination.index, 0, Number(draggableId));
+    newDestinationCards.push(card);
 
-    // dispatch newCardsOrder on lists
-    // dispatch newCards OnList
-    
+    // dispatch reOrderCardBetweenLists()
   }
 
-  // const currentValue = selectCount(getState());
-  // if (currentValue % 2 === 1) {
-  //   dispatch(incrementByAmount(amount));
-  // }
+  // notify server!
 };
-
-
-export const { reOrderList } = boardsSlice.actions;
 
 export default boardsSlice.reducer;
 
 export const selectAllBoard = state => state.boards.data;
-
-
-// export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId);
-    
