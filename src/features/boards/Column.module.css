@@ -20,7 +20,11 @@ header.listHeader {
   justify-content: space-between;
   align-items: center;
 }
-  
+
+.cards {
+  min-height: 40px;
+}
+
 span.listHeaderMenu {
   width: 27px;
   height: 27px;

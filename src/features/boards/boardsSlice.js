@@ -89,7 +89,13 @@ const boardsSlice = createSlice({
   name: 'boards',
   initialState,
   reducers: {
-
+    reOrderList: (state, action) => {
+      const { payload } = action;
+      const { boardId, listId, newCardsOrder } = payload;
+      const board = state.data.find(board => board.id === boardId);
+      const list = board.lists.find(list => list.id === listId);
+      list.cards_order = newCardsOrder;
+    },
   },
   extraReducers: {
     [fetchBoards.pending]: (state) => {
@@ -140,7 +146,7 @@ const boardsSlice = createSlice({
   }
 });
 
-// export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions;
+export const { reOrderList } = boardsSlice.actions;
 
 export default boardsSlice.reducer;
 

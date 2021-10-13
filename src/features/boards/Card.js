@@ -39,7 +39,7 @@ function Card({ card, index, setSelectedCardComposerId }) {
   return (
     <>
       <Draggable
-        draggableId={`card-${cardId}`}
+        draggableId={`${cardId}`}
         index={index}
       >
         {

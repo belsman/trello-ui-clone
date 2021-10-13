@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { DragDropContext } from "react-beautiful-dnd";
 import BoardNav from "../../BoardNav";
 import styles from "./boardDetail.module.css";
@@ -7,8 +7,10 @@ import Header from "../../Header";
 import Column from "./Column";
 import AddListButton from "./AddListButton";
 import ListComposer from "./ListComposer";
+import { reOrderList } from './boardsSlice';
 
 function BoardDetail({ match }) {
+  const dispatch = useDispatch();
   const { boardId } = match.params;
 
   const [ showAddListComposer, setShowAddListComposer ] = useState(false);
@@ -44,7 +46,43 @@ function BoardDetail({ match }) {
     );
   });
 
-  const onDragEndHandler = result => { /* TODO:Reorder our items  */};
+  const onDragEndHandler = result => {
+    const { draggableId, source, destination, type } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (source.droppableId === destination.droppableId &&
+        source.index === destination.index) {
+          return;
+        }
+    
+    const sourceColumn = board.lists.find( list => list.id === Number(source.droppableId));
+
+    const destinationColumn = board.lists.find(
+      list => list.id === Number(destination.droppableId));
+
+    if (sourceColumn === destinationColumn) {
+      const newCardsOrder = Array.from(sourceColumn.cards_order);
+      newCardsOrder.splice(source.index, 1);
+      newCardsOrder.splice(destination.index, 0, Number(draggableId));
+
+      dispatch(reOrderList({
+        boardId: board.id,
+        listId: sourceColumn.id,
+        newCardsOrder
+      }));
+      /*
+        reOrderCardOnServer({
+          boardId,
+          source: { cardIndex: 0, columnId},
+          destination: { cardIndex: 0, columnId }
+        })
+      */
+      return;
+    }
+  };
 
   return (
     <div className={styles.rootDetail} onClick={handleOuterClick}>
