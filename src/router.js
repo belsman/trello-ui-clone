@@ -8,14 +8,17 @@ import { useSelector } from 'react-redux';
 
 function Routes() {
   const user = useSelector(state => state.user);
-  
+
   return (
     <>
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Register} />
-        <Route path="/boards/:boardId" exact component={BoardDetail} />
-        {/* <Route path="/" component={Home} /> */}
+        <Route
+          exact
+          path="/boards/:boardId"
+          render={() => (user?.id ? <BoardDetail /> : <Register />)}
+        />
         <Route
           exact
           path="/"
