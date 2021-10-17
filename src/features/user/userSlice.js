@@ -33,7 +33,7 @@ export const register = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk(
-  `${baseUrl}/logout`,
+  `auth/logout`,
   async () => localStorage.removeItem(storeName)
 );
 
