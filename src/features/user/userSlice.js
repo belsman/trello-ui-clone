@@ -9,7 +9,12 @@ const storeName = "brello";
 export const fetchUser = createAsyncThunk(
   'auth/fetchUser',
   async () => {
-    const { data } = await axios.get(`${baseUrl}/auth-user/`);
+    const { data } = await axios
+    .get(`${baseUrl}/auth-user/`, {
+      headers: {
+        'Authorization': `token ${localStorage.getItem(storeName)}`
+      }
+    });
     return data;
   }
 );

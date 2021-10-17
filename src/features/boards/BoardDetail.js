@@ -30,6 +30,8 @@ function BoardDetail({ match }) {
     return <Redirect to="/login" />
   }
 
+  // useEffect will get the individual board from the server!
+  // -- if there is a server error, attempt to get it from the redux store
   if (!board) {
     return (
       <section>
