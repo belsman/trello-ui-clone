@@ -17,7 +17,7 @@ The application features
 - Change the ```Column``` of a ```Card``` with the Drag and Drop feature
 - Delete ```Card```
 - Logout
-- *** More features are to be added soon ***
+- ***More features are to be added soon***
 
 ## Live version
 
@@ -32,7 +32,7 @@ The application features
 - react-beautiful-dnd
 - react-modal
 - react-textarea-autosize
-- *** see the ```package.json``` for more information on the tools used ***
+- ***see the ```package.json``` for more information on the tools used***
 
 ## Run Trello-UI-Clone Locally
 
