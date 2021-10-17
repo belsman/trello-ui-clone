@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from "react-router-dom";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import BoardNav from "../../BoardNav";
 import styles from "./boardDetail.module.css";
@@ -21,8 +22,13 @@ function BoardDetail({ match }) {
     selectedCardComposerId && setSelectedCardComposerId('');
   }
 
+  const user = useSelector(state => state.user);
   const board = useSelector(state => state.boards.data
     .find(board => board.id === Number(boardId)));
+
+  if (!user.id) {
+    return <Redirect to="/login" />
+  }
 
   if (!board) {
     return (
