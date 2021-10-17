@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project: Side Project
+## Trello Clone
 
-## Available Scripts
+This is a partial clone of the famous [trello application](https://trello.com/), developed using React and Redux. It is an application that helps users, and teams manage their tasks a Kanban way! It is [connected to a Django backend](https://github.com/belsman/Tasks-Tracker-API).
 
-In the project directory, you can run:
+The application features
+- Login/Registration Page ```[token Authentication]```
+- Display lists of ```Boards```
+- Create ```Board```
+- Create ```Columns (Lists)``` within a Particular ```Board```
+- Order ```Columns``` via Drag and Drop
+- Display ```Cards``` within their respective ```Columns```
+- See details of each ```Card```
+- Edit the contents of a ```Card```
+- Change the ```Column``` of a ```Card``` with the Drag and Drop feature
+- Delete ```Card```
+- Logout
+- *** More features are to be added soon ***
 
-### `yarn start`
+## Live version
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🔗 [Click here to go live]()
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `yarn test`
+- React
+- Redux
+- Redux Toolkit
+- Vanilla CSS3
+- react-beautiful-dnd
+- react-modal
+- react-textarea-autosize
+- *** see the ```package.json``` for more information on the tools used ***
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run Trello-UI-Clone Locally
 
-### `yarn build`
+To get a local copy up and running follow these simple steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In order to run **trello-ui-clone** locally, you will require the following:
+- Nodejs and yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install
 
-### `yarn eject`
+1) Open the Terminal
+2) Run
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+git clone git@github.com:belsman/trello-ui-clone.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or, for SSH:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+git clone git@github.com:belsman/trello-ui-clone.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3) Run ```cd trello-ui-clone``` to enter the main directory
+4) Run ```npm install```
+5) Run `npm start` to launch **trello-ui-clone**
+6) Happy viewing!
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Bello Babakolo**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@belsman](https://github.com/belsman)
+- Twitter: [@d_belsman](https://twitter.com/d_belsman)
+- Linkdin: [Bello Babakolo](https://www.linkedin.com/in/bello-babakolo-b23b17145/)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Feel free to check the [issues page](issues/).
 
-### Making a Progressive Web App
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Give a ⭐️ if you like this project!
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Microverse Inc](https://www.microverse.org/)
+- [Trello](https://trello.com/)
