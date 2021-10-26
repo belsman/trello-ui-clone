@@ -3,7 +3,7 @@ import axios from "axios";
 
 const initialState = {};
 
-const baseUrl = "http://localhost:8000";
+const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com";
 const storeName = "brello";
 
 export const fetchUser = createAsyncThunk(

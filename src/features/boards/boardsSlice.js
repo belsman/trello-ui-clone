@@ -9,7 +9,7 @@ const initialState = {
 
 export const fetchBoards = createAsyncThunk("boards/fetchBoard", async () => {
     const { data } = await axios
-      .get("http://localhost:8000/boards/", {
+      .get("https://murmuring-brushlands-24573.herokuapp.com/boards/", {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
@@ -21,7 +21,7 @@ export const addNewBoard = createAsyncThunk(
   "boards/addNewBoard",
   async initialPost => {
     const { data } = await axios
-      .post("http://localhost:8000/boards/", initialPost, {
+      .post("https://murmuring-brushlands-24573.herokuapp.com/boards/", initialPost, {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
@@ -34,7 +34,7 @@ export const addNewList = createAsyncThunk(
   "boards/addNewList",
   async initialPost => {
     const { data } = await axios
-      .post("http://localhost:8000/lists/", initialPost, {
+      .post("https://murmuring-brushlands-24573.herokuapp.com/lists/", initialPost, {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
@@ -47,7 +47,7 @@ export const addNewCard = createAsyncThunk(
   "boards/addNewCard",
   async initialPost => {
     const { data } = await axios
-      .post("http://localhost:8000/cards/", initialPost, {
+      .post("https://murmuring-brushlands-24573.herokuapp.com/cards/", initialPost, {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
@@ -62,7 +62,7 @@ export const editCard = createAsyncThunk(
   async initialPost => {
     const { cardId } = initialPost;
     const { data } = await axios
-      .patch(`http://localhost:8000/cards/${cardId}/`, initialPost, {
+      .patch(`https://murmuring-brushlands-24573.herokuapp.com/cards/${cardId}/`, initialPost, {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
@@ -75,7 +75,7 @@ export const deleteCard = createAsyncThunk(
   "boards/deleteCard",
   async initialPost => {
     await axios
-      .delete(`http://localhost:8000/cards/${initialPost.id}/`, {
+      .delete(`https://murmuring-brushlands-24573.herokuapp.com/cards/${initialPost.id}/`, {
         headers: {
           'Authorization': `token ${localStorage.getItem("brello")}`
         }
