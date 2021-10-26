@@ -21,7 +21,7 @@ The application features
 
 ## Live version
 
-🔗 [Click here to go live]()
+🔗 [Click here to go live](https://kanban-board-by-belsman.netlify.app/)
 
 ## Built With
 
