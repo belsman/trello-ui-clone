@@ -30,6 +30,11 @@ function Routes() {
           path="/"
           render={() => (user?.id ? <Home /> : <Register />)}
         />
+        <Route
+          exact
+          path="/boards"
+          render={() => (user?.id ? <Home /> : <Register />)}
+        />
       </Switch>
     </>
   );

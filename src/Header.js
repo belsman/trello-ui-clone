@@ -7,10 +7,12 @@ import { faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; //faIn
 
 import { logout } from "./features/user/userSlice";
 import styles from './Header.module.css';
+import { useHistory } from "react-router";
 
 function Header() {
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   return (
     <nav className={styles.header}>
@@ -18,7 +20,12 @@ function Header() {
         <button className={`${styles.navbtn} ${styles.navIconBtn}`}>
             <FontAwesomeIcon icon={faHome} />
         </button>
-        <button className={styles.navbtn}><span className={styles.bolder}>Boards</span></button>
+        <button
+          className={styles.navbtn}
+          onClick={() => history.push('/boards')}
+        >
+          <span className={styles.bolder}>Boards</span>
+        </button>
         <input className={styles.navFormControl} type="search" placeholder="Jump to..."/>
       </div>
 
