@@ -177,8 +177,10 @@ export const reOrderListThunk = payload => (dispatch, getState) => {
   const board = selectBoardById(getState(), boardId);
   const newListsOrder = Array.from(board.lists_order);
 
+  const list = board.lists.find(list => `column-${list.id}` === draggableId);
+
   newListsOrder.splice(source.index, 1);
-  newListsOrder.splice(destination.index, 0, Number(draggableId));
+  newListsOrder.splice(destination.index, 0, list.id);
 
   dispatch(reOrderList({
     boardId: board.id,
@@ -194,14 +196,16 @@ export const reOrderCardThunk = payload => (dispatch, getState) => {
 
   const board = selectBoardById(getState(), boardId);
 
-  const sourceColumn = board.lists.find( list => list.id === Number(source.droppableId));
+  const sourceColumn = board.lists.find(list => `column-${list.id}` === source.droppableId);
   const destinationColumn = board.lists.find(
-    list => list.id === Number(destination.droppableId));
+    list => `column-${list.id}` === destination.droppableId);
+
+  const draggedCard = sourceColumn.cards.find(card => `card-${card.id}` === draggableId);
 
   if (sourceColumn === destinationColumn) {
     const newCardsOrder = Array.from(sourceColumn.cards_order);
     newCardsOrder.splice(source.index, 1);
-    newCardsOrder.splice(destination.index, 0, Number(draggableId));
+    newCardsOrder.splice(destination.index, 0, draggedCard.id);
 
     dispatch(reOrderCardInList({
       boardId: board.id,
@@ -216,13 +220,16 @@ export const reOrderCardThunk = payload => (dispatch, getState) => {
     const newSourceCards = Array.from(sourceColumn.cards);
     const newSourceCardsOrder = Array.from(sourceCardsOrder);
     newSourceCardsOrder.splice(source.index, 1);
-    const card = newSourceCards.find(card => card.id === Number(draggableId));
+
+    const card = newSourceCards.find(card => `card-${card.id}` === draggableId);
+    
     const cardIndex = newSourceCards.indexOf(card);
     newSourceCards.splice(cardIndex, 1);
     
     const newDestinationCards = Array.from(destinationColumn.cards);
     const newDestinationCardsOrder = Array.from(destinationCardsOrder);
-    newDestinationCardsOrder.splice(destination.index, 0, Number(draggableId));
+
+    newDestinationCardsOrder.splice(destination.index, 0, card.id);
     newDestinationCards.push(card);
 
     const reOrderedPayload = {

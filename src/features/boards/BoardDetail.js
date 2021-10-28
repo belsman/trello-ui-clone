@@ -72,7 +72,6 @@ function BoardDetail({ match }) {
       return;
     }
 
-    console.log("We should be dragging a task!");
     dispatch(reOrderCardThunk({ boardId: board.id, result}));
   };
 
