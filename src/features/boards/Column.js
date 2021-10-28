@@ -23,7 +23,7 @@ function Column({ index, list, selectedCardComposerId, setSelectedCardComposerId
   });
 
   return (
-    <Draggable draggableId={`${listId}`} index={index}>
+    <Draggable draggableId={`column-${listId}`} index={index}>
       {provided => (
         <section
           className={styles.list}
