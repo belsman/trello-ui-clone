@@ -35,7 +35,7 @@ function Column({ index, list, selectedCardComposerId, setSelectedCardComposerId
             <span className={styles.listHeaderMenu}>...</span>
           </header>
           <Droppable
-            droppableId={`${listId}`}
+            droppableId={`column-${listId}`}
             type="card"
           >
             {
