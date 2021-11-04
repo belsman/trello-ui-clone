@@ -15,6 +15,10 @@ function Routes() {
     dispatch(fetchUser());
   }, [dispatch]);
 
+  // track loading state [ application is loading! ]
+
+  if ()
+
   return (
     <>
       <Switch>

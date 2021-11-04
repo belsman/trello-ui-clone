@@ -1,9 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from "axios";
 
-const initialState = {};
+const initialState = {
+  user: {},
+  status: 'idle',
+  error: null
+};
 
-const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com";
+const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com"; // use local server based on the process.env
 const storeName = "brello";
 
 export const fetchUser = createAsyncThunk(
