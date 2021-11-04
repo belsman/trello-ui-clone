@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "./userSlice";
+import { login } from "./authSlice";
 import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
 import logo from '../../logo.svg';
@@ -13,7 +13,7 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const user = useSelector(state => state.user);
+  const user = useSelector(state => state.auth.user);
 
   const handleSubmit = e => {
     e.preventDefault();

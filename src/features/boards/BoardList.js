@@ -51,7 +51,7 @@ function BoardList() {
     content = (
       <ul className={styles.boardList}>
         {renderedBoard}
-        <li key={'board-creator'} className={styles.boardItem}>
+        <li key='board-creator' className={styles.boardItem}>
           <CreateBoardButton styles={styles} />
         </li>
       </ul>

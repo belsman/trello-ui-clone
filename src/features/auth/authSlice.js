@@ -51,17 +51,25 @@ export const authSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
+      .addCase(fetchUser.pending, (state, action) => {
+        state.status = 'loading';
+      })
       .addCase(fetchUser.fulfilled, (state, action) => {
-        return action.payload;
+        state.status = 'succeeded';
+        state.user = action.payload;
+      })
+      .addCase(fetchUser.rejected, (state, action) => {
+        state.status = 'failure';
+        state.error = action.error.message;
       })
       .addCase(login.fulfilled, (state, action) => {
-        return action.payload;
+        state.user = action.payload;
       })
       .addCase(register.fulfilled, (state, action) => {
-        return action.payload;
+        state.user = action.payload;
       })
       .addCase(logout.fulfilled, (state, action) => {
-        return {}
+        state.user = {}
       })
   },
 });

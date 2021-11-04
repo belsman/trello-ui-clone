@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; //faInfoCircle
 
-import { logout } from "./features/user/userSlice";
+import { logout } from "./features/auth/authSlice";
 import styles from './Header.module.css';
 import { useHistory } from "react-router";
 

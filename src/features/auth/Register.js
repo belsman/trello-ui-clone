@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
-import { register } from "./userSlice";
+import { register } from "./authSlice";
 import logo from '../../logo.svg';
 
 function Register() {
