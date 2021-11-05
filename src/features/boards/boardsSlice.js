@@ -7,11 +7,15 @@ const initialState = {
   error: null
 };
 
+//const baseUrl = 'https://murmuring-brushlands-24573.herokuapp.com';
+const baseUrl = 'http://localhost:8000';
+const storeName = "brello";
+
 export const fetchBoards = createAsyncThunk("boards/fetchBoard", async () => {
     const { data } = await axios
-      .get("https://murmuring-brushlands-24573.herokuapp.com/boards/", {
+      .get(`${baseUrl}/boards/`, {
         headers: {
-          'Authorization': `token ${localStorage.getItem("brello")}`
+          'Authorization': `token ${localStorage.getItem(storeName)}`
         }
       });
     return data;
@@ -21,9 +25,9 @@ export const addNewBoard = createAsyncThunk(
   "boards/addNewBoard",
   async initialPost => {
     const { data } = await axios
-      .post("https://murmuring-brushlands-24573.herokuapp.com/boards/", initialPost, {
+      .post(`${baseUrl}/boards/`, initialPost, {
         headers: {
-          'Authorization': `token ${localStorage.getItem("brello")}`
+          'Authorization': `token ${localStorage.getItem(storeName)}`
         }
       });
     return data;
@@ -34,9 +38,9 @@ export const addNewList = createAsyncThunk(
   "boards/addNewList",
   async initialPost => {
     const { data } = await axios
-      .post("https://murmuring-brushlands-24573.herokuapp.com/lists/", initialPost, {
+      .post(`${baseUrl}/lists/`, initialPost, {
         headers: {
-          'Authorization': `token ${localStorage.getItem("brello")}`
+          'Authorization': `token ${localStorage.getItem(storeName)}`
         }
       });
     return data;
@@ -47,9 +51,9 @@ export const addNewCard = createAsyncThunk(
   "boards/addNewCard",
   async initialPost => {
     const { data } = await axios
-      .post("https://murmuring-brushlands-24573.herokuapp.com/cards/", initialPost, {
+      .post(`${baseUrl}/cards/`, initialPost, {
         headers: {
-          'Authorization': `token ${localStorage.getItem("brello")}`
+          'Authorization': `token ${localStorage.getItem(storeName)}`
         }
       });
     return data;
@@ -62,9 +66,9 @@ export const editCard = createAsyncThunk(
   async initialPost => {
     const { cardId } = initialPost;
     const { data } = await axios
-      .patch(`https://murmuring-brushlands-24573.herokuapp.com/cards/${cardId}/`, initialPost, {
+      .patch(`${baseUrl}/cards/${cardId}/`, initialPost, {
         headers: {
-          'Authorization': `token ${localStorage.getItem("brello")}`
+          'Authorization': `token ${localStorage.getItem(storeName)}`
         }
       });
     return data;
@@ -75,9 +79,9 @@ export const deleteCard = createAsyncThunk(
   "boards/deleteCard",
   async initialPost => {
     await axios
-      .delete(`https://murmuring-brushlands-24573.herokuapp.com/cards/${initialPost.id}/`, {
+      .delete(`${baseUrl}/cards/${initialPost.id}/`, {
         headers: {
-          'Authorization': `token ${localStorage.getItem("brello")}`
+          'Authorization': `token ${localStorage.getItem(storeName)}`
         }
       });
     return initialPost;

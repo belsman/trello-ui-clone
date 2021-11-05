@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from "react-router-dom";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import BoardNav from "../../BoardNav";
 import styles from "./boardDetail.module.css";
@@ -24,13 +23,8 @@ function BoardDetail({ match }) {
     selectedCardComposerId && setSelectedCardComposerId('');
   }
 
-  const user = useSelector(state => state.user);
   const board = useSelector(state => state.boards.data
     .find(board => board.id === Number(boardId)));
-
-  if (!user.id) {
-    return <Redirect to="/login" />
-  }
 
   // useEffect will get the individual board from the server!
   // -- if there is a server error, attempt to get it from the redux store

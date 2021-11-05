@@ -1,27 +1,33 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import FederatedLoginButton from "./FederatedLoginButton";
 import styles from "./Login.module.css";
 import { register } from "./authSlice";
 import logo from '../../logo.svg';
+import Login from "./Login";
 
 function Register() {
   const [ email, setEmail ] = useState('');
   const [ fullName, setFullName ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  const dispatch = useDispatch();
+  const [ showLogin, setShowLogin ] = useState(false);
 
-  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(register({ email, full_name: fullName, password }));
   };
 
-  if (user.id) {
-    return <Redirect to="/" />;
+  const showLoginHandler = e => {
+    e.preventDefault();
+    setShowLogin(true);
+  }
+
+  if (showLogin) {
+    return <Login />
   }
 
   return (
@@ -70,7 +76,7 @@ function Register() {
             Continue with Slack
           </FederatedLoginButton>
           <ul className={styles.bottomLink}>
-            <li><Link to="/login">Already have an account? Log In</Link></li>
+            <li><Link onClick={showLoginHandler}>Already have an account? Log In</Link></li>
           </ul>
         </article>
       </section>

@@ -7,7 +7,8 @@ const initialState = {
   error: null
 };
 
-const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com"; // use local server based on the process.env
+// const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com"; 
+const baseUrl = "http://localhost:8000";// use local server based on the process.env
 const storeName = "brello";
 
 export const fetchUser = createAsyncThunk(

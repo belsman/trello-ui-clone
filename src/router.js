@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import Login from "./features/auth/Login";
-import Register from './features/auth/Register';
 import Home from "./Home";
 import BoardDetail from './features/boards/BoardDetail';
 import { fetchUser } from './features/auth/authSlice';
@@ -35,21 +34,9 @@ function Routes() {
   return (
     <>
       <Switch>
-        <Route
-          exact
-          path="/boards/:boardId"
-          render={({ match }) => (user?.id ? <BoardDetail match={match} /> : <Register />)}
-        />
-        <Route
-          exact
-          path="/"
-          render={() => (user?.id ? <Home /> : <Register />)}
-        />
-        <Route
-          exact
-          path="/boards"
-          render={() => (user?.id ? <Home /> : <Register />)}
-        />
+        <Route exact path="/boards/:boardId" component={BoardDetail} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/boards" component={Home} />
       </Switch>
     </>
   );
