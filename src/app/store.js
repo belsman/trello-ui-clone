@@ -8,10 +8,8 @@ const combinedReducer = combineReducers({
 });
 
 const rootReducer = (state, action) => {
-  if (action.type === 'auth/clearOnLogout') { // this is clear_on_log_out
-    // normal logging out remains! 
+  if (action.type === 'auth/clearOnLogout') {
     state = undefined;
-    console.log("*Logging out!")
   }
   return combinedReducer(state, action);
 };

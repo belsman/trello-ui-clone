@@ -7,7 +7,7 @@ const initialState = {
   error: null
 };
 
-// const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com"; 
+// const baseUrl = "https://murmuring-brushlands-24573.herokuapp.com";
 const baseUrl = "http://localhost:8000";// use local server based on the process.env
 const storeName = "brello";
 
@@ -71,6 +71,10 @@ export const authSlice = createSlice({
   },
 });
 
+export const logout = payload => (dispatch, getState) => {
+  localStorage.removeItem(storeName);
+  dispatch(clearOnLogout());
+};
 
 export const { clearOnLogout } = authSlice.actions;
 
