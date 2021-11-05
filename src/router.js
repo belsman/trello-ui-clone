@@ -17,7 +17,7 @@ function Routes() {
     if (status === 'idle') {
       dispatch(fetchUser());
     }
-  }, [dispatch]);
+  }, [status, dispatch]);
 
   if (status === 'loading') {
     return <h3>.....Loading!</h3>
