@@ -1,5 +1,4 @@
-.rootDetail {
-  background-color: rgb(81, 158, 236);
+:global(div#root) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -11,6 +10,7 @@
 .board {
   padding: 0.5rem;
   flex-grow: 1;
+  background-color: rgb(81, 158, 236);
 }
 
 .boardLists {

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
@@ -72,47 +71,52 @@ function BoardDetail({ match }) {
   };
 
   return (
-    ReactDOM.createPortal(
-      <div className={styles.rootDetail} onClick={handleOuterClick}>
-        <Header />
-        <BoardNav boardName={boardName} />
-        <main className={styles.board}>
-          <div className={styles.boardLists}>
-            <DragDropContext
-              onDragEnd={onDragEndHandler}
-            >
-              <Droppable droppableId="all-columns" direction="horizontal" type="column">
-              {
-                provided => (
-                  <div
-                    className={styles.lists}
-                    {...provided.droppableProps}
-                    ref={provided.innerRef}
-                  >
-                    {renderedColumns}
-                    {provided.placeholder}
-                  </div>
-                )
-              }
-              </Droppable>
-            </DragDropContext>
-            <div className={styles.createBoard}>
-              { 
-                showAddListComposer ? 
-                <ListComposer
-                  boardId={boardId}
-                  onCancel={() => setShowAddListComposer(false)}
-                />
-                :
-                <AddListButton onClick={() => setShowAddListComposer(true)} />
-              }
-            </div>
+    <>
+      <Header />
+      <BoardNav boardName={boardName} />
+      <main className={styles.board}>
+        <div className={styles.boardLists}>
+          <DragDropContext
+            onDragEnd={onDragEndHandler}
+          >
+            <Droppable droppableId="all-columns" direction="horizontal" type="column">
+            {
+              provided => (
+                <div
+                  className={styles.lists}
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
+                  {renderedColumns}
+                  {provided.placeholder}
+                </div>
+              )
+            }
+            </Droppable>
+          </DragDropContext>
+          <div className={styles.createBoard}>
+            { 
+              showAddListComposer ? 
+              <ListComposer
+                boardId={boardId}
+                onCancel={() => setShowAddListComposer(false)}
+              />
+              :
+              <AddListButton onClick={() => setShowAddListComposer(true)} />
+            }
           </div>
-        </main>
-      </div>,
-      document.querySelector('body')
-    )
+        </div>
+      </main>
+    </>
   );
+  // return (
+  //   ReactDOM.createPortal(
+  //     <div className={styles.rootDetail} onClick={handleOuterClick}>
+
+  //     </div>,
+  //     document.querySelector('body')
+  //   )
+  // );
 }
 
 export default BoardDetail;
